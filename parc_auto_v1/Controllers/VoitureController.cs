@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
+using parc_auto_v1.Services;  // Add this line
 using System.Threading.Tasks;
 
 public class VoitureController : Controller
@@ -107,7 +108,6 @@ public class VoitureController : Controller
     }
 
     // GET: Voiture/Delete/5
-   
     public async Task<IActionResult> Delete(int? id)
     {
         if (id == null)
@@ -133,7 +133,6 @@ public class VoitureController : Controller
         TempData["SuccessMessage"] = "Voiture has been deleted successfully!";
         return RedirectToAction(nameof(Index));
     }
-
 
     private async Task<bool> VoitureExists(int id)
     {

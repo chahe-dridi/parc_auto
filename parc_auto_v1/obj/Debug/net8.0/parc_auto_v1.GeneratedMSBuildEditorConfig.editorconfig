@@ -50,6 +50,66 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Sinistre/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Sinistre/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Sinistre/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Sinistre/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Sinistre/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vidange/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vidange/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vidange/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vidange/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vidange/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vignette/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vignette/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vignette/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vignette/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vignette/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/VisiteTechnique/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRlVGVjaG5pcXVlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

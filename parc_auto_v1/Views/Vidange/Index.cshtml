@@ -1,0 +1,47 @@
+﻿@model IEnumerable<parc_auto_v1.Models.Vidange>
+
+@{
+    ViewData["Title"] = "Vidange Index";
+}
+
+<h2>Vidange Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date Intervention</th>
+            <th>Type Intervention</th>
+            <th>Fournisseur</th>
+            <th>NFacture</th>
+            <th>Kilometrage</th>
+            <th>Operation Details</th>
+            <th>Montant HT</th>
+            <th>Voiture</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DateIntervention.ToShortDateString()</td>
+                <td>@item.TypeIntervention</td>
+                <td>@item.Fournisseur</td>
+                <td>@item.NFacture</td>
+                <td>@item.Kilometrage</td>
+                <td>@item.OperationDetails</td>
+                <td>@item.MontantHt.ToString("C")</td>
+                <td>@item.Voiture.Matricule</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

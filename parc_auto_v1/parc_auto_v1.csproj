@@ -30,8 +30,6 @@
   <ItemGroup>
     <Folder Include="Views\Assurance\" />
     <Folder Include="Views\Sinistre\" />
-    <Folder Include="Views\Vignette\" />
-    <Folder Include="Views\Vidange\" />
   </ItemGroup>
 
 </Project>
