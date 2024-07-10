@@ -1,31 +1,32 @@
-﻿@model IEnumerable<parc_auto_v1.Models.Vignette>
+﻿@model List<parc_auto_v1.Models.Assurance>
 
 @{
-    ViewData["Title"] = "Vignette Index";
+    ViewData["Title"] = "Assurances";
 }
 
-<h1>Vignette Index</h1>
+<h2>Assurances</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DateEchance)
+                @Html.DisplayNameFor(model => model[0].DateEchance)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateValide)
+                @Html.DisplayNameFor(model => model[0].DateValide)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Alert)
+                @Html.DisplayNameFor(model => model[0].Alert)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PrixUnitaire)
+                @Html.DisplayNameFor(model => model[0].PrixUnitaire)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Voiture.Matricule)
+                @Html.DisplayNameFor(model => model[0].Voiture.Matricule)
             </th>
             <th></th>
         </tr>
@@ -50,8 +51,8 @@
                     @Html.DisplayFor(modelItem => item.Voiture.Matricule)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>

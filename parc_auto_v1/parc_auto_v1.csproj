@@ -28,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Assurance\" />
     <Folder Include="Views\Sinistre\" />
   </ItemGroup>
 

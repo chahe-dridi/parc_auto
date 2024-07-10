@@ -1,14 +1,14 @@
-﻿@model parc_auto_v1.Models.Vignette
+﻿@model parc_auto_v1.Models.Assurance
 
 @{
-    ViewData["Title"] = "Delete Vignette";
+    ViewData["Title"] = "Delete Assurance";
 }
 
-<h2>Delete Vignette</h2>
+<h2>Delete Assurance</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Vignette</h4>
+    <h4>Assurance</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -42,9 +42,6 @@
             @Html.DisplayFor(model => model.Voiture.Matricule)
         </dd>
     </dl>
-
-     
-
 
     <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
         <input type="submit" value="Delete" class="btn btn-danger" /> |

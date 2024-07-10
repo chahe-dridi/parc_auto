@@ -26,6 +26,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Assurance/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Assurance/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Assurance/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Assurance/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Assurance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Home/DemandForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZW1hbmRGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
