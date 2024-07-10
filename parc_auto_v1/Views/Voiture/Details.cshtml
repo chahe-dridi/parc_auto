@@ -1,0 +1,67 @@
+﻿@model parc_auto_v1.Models.Voiture
+
+@{
+    ViewData["Title"] = "Voiture Details";
+}
+
+<h1>Voiture Details</h1>
+
+<div>
+    <h4>Voiture</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Matricule)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Matricule)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeVoiture)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeVoiture)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Marque)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Marque)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Modele)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Modele)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Km)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Km)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carburant)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carburant)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Etat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Etat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Disponibilite)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Disponibilite)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

@@ -1,0 +1,75 @@
+﻿@model parc_auto_v1.Models.Voiture
+
+@{
+    ViewData["Title"] = "Create Voiture";
+}
+
+<h1>Create Voiture</h1>
+
+<h4>Voiture</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Matricule" class="control-label"></label>
+                <input asp-for="Matricule" class="form-control" />
+                <span asp-validation-for="Matricule" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeVoiture" class="control-label"></label>
+                <input asp-for="TypeVoiture" class="form-control" />
+                <span asp-validation-for="TypeVoiture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Marque" class="control-label"></label>
+                <input asp-for="Marque" class="form-control" />
+                <span asp-validation-for="Marque" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modele" class="control-label"></label>
+                <input asp-for="Modele" class="form-control" />
+                <span asp-validation-for="Modele" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Km" class="control-label"></label>
+                <input asp-for="Km" class="form-control" />
+                <span asp-validation-for="Km" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carburant" class="control-label"></label>
+                <input asp-for="Carburant" class="form-control" />
+                <span asp-validation-for="Carburant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Etat" class="control-label"></label>
+                <input asp-for="Etat" class="form-control" />
+                <span asp-validation-for="Etat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Disponibilite" class="control-label"></label>
+                <select asp-for="Disponibilite" class="form-control">
+                    <option value="Pre Reserved">Pre Reserved</option>
+                    <option value="Reserved">Reserved</option>
+                    <option value="Disponible">Disponible</option>
+                </select>
+                <span asp-validation-for="Disponibilite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

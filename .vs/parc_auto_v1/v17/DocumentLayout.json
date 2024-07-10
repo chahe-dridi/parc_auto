@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|c:\\users\\dark\\desktop\\.net\\parc_auto_v1\\parc_auto_v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|solutionrelative:parc_auto_v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|c:\\users\\dark\\desktop\\.net\\parc_auto_v1\\parc_auto_v1\\controllers\\voiturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|solutionrelative:parc_auto_v1\\controllers\\voiturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|c:\\users\\dark\\desktop\\.net\\parc_auto_v1\\parc_auto_v1\\services\\voitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|solutionrelative:parc_auto_v1\\services\\voitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|c:\\users\\dark\\desktop\\.net\\parc_auto_v1\\parc_auto_v1\\services\\ivoitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|solutionrelative:parc_auto_v1\\services\\ivoitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|c:\\users\\dark\\desktop\\.net\\parc_auto_v1\\parc_auto_v1\\models\\voiture .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|solutionrelative:parc_auto_v1\\models\\voiture .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|c:\\users\\dark\\desktop\\.net\\parc_auto_v1\\parc_auto_v1\\views\\voiture\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|solutionrelative:parc_auto_v1\\views\\voiture\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|c:\\users\\dark\\desktop\\.net\\parc_auto_v1\\parc_auto_v1\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|solutionrelative:parc_auto_v1\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VoitureService.cs",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\VoitureService.cs",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Services\\VoitureService.cs",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\VoitureService.cs",
+              "RelativeToolTip": "parc_auto_v1\\Services\\VoitureService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T09:27:37.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Program.cs",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Program.cs",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Program.cs",
+              "RelativeToolTip": "parc_auto_v1\\Program.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAmwCcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T09:15:09.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IVoitureService.cs",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\IVoitureService.cs",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Services\\IVoitureService.cs",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\IVoitureService.cs",
+              "RelativeToolTip": "parc_auto_v1\\Services\\IVoitureService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAwwAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T09:14:32.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Voiture\\Create.cshtml",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Views\\Voiture\\Create.cshtml",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Voiture\\Create.cshtml",
+              "RelativeToolTip": "parc_auto_v1\\Views\\Voiture\\Create.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T07:47:35.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VoitureController.cs",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\VoitureController.cs",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Controllers\\VoitureController.cs",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\VoitureController.cs",
+              "RelativeToolTip": "parc_auto_v1\\Controllers\\VoitureController.cs",
+              "ViewState": "AQIAAGsAAAAAAAAAAAAAwI0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T07:46:25.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Voiture .cs",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Models\\Voiture .cs",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Models\\Voiture .cs",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Models\\Voiture .cs",
+              "RelativeToolTip": "parc_auto_v1\\Models\\Voiture .cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T07:46:22.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "parc_auto_v1\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T07:44:01.814Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1095,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

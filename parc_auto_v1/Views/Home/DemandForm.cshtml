@@ -1,0 +1,69 @@
+﻿@model parc_auto_v1.Models.Demande
+
+@{
+    ViewData["Title"] = "Demand Form";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <!-- Form for demand -->
+    <form asp-action="SubmitDemandForm" asp-controller="Home" method="post">
+        <!-- Hidden field for ClientId -->
+        <input type="hidden" asp-for="ClientId" />
+
+        <!-- Hidden field for TypeVoiture -->
+        <input type="hidden" asp-for="TypeVoiture" />
+
+        <div class="form-group">
+            <label asp-for="AffectationDepartement">Affectation Département:</label>
+            <input asp-for="AffectationDepartement" class="form-control" />
+            <span asp-validation-for="AffectationDepartement" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Mission">Mission:</label>
+            <textarea asp-for="Mission" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Mission" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="Destination">Destination:</label>
+            <input asp-for="Destination" class="form-control" />
+            <span asp-validation-for="Destination" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DateDepart">Date de Départ:</label>
+            <input asp-for="DateDepart" class="form-control" type="date" />
+            <span asp-validation-for="DateDepart" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DateArrivee">Date d'Arrivée:</label>
+            <input asp-for="DateArrivee" class="form-control" type="date" />
+            <span asp-validation-for="DateArrivee" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="NiveauPriorite">Niveau de Priorité:</label>
+            <select asp-for="NiveauPriorite" class="form-control">
+                <option value="1">1: Priorité la plus basse, flexibilité maximale avec l'attribution des voitures.</option>
+                <option value="2">2: Faible priorité, légère flexibilité avec l'attribution des voitures.</option>
+                <option value="3">3: Priorité moyenne, flexibilité modérée avec l'attribution des voitures.</option>
+                <option value="4">4: Haute priorité, flexibilité limitée avec l'attribution des voitures.</option>
+                <option value="5">5: Priorité la plus haute, aucune flexibilité, la voiture demandée doit être disponible au moment et au type demandés.</option>
+            </select>
+            <span asp-validation-for="NiveauPriorite" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Description:</label>
+            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+      
+        <button type="submit" class="btn btn-primary">Submit Demand</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
