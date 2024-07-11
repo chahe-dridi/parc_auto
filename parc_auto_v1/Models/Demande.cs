@@ -10,7 +10,15 @@ namespace parc_auto_v1.Models
         public int Id { get; set; }
 
         [Required]
-        public int ClientId { get; set; }
+        [StringLength(100)]
+        public string Nom { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string Prenom { get; set; }
+
+        [Required]
+        public int IdEmploye { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -43,10 +51,7 @@ namespace parc_auto_v1.Models
 
         public int? VoitureId { get; set; }
 
-        // Navigation properties
-        [ForeignKey("ClientId")]
-        public virtual Demandeur Client { get; set; }
-
+        // Navigation property
         [ForeignKey("VoitureId")]
         public virtual Voiture Voiture { get; set; }
     }

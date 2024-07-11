@@ -57,7 +57,7 @@ namespace parc_auto_v1.Controllers
             var model = new Demande
             {
                 TypeVoiture = "4 places",
-                ClientId = GetCurrentClientId() // Method to get the current client ID
+                  // Method to get the current client ID
             };
             ViewData["Title"] = "Demand Form";
             return View("DemandForm", model);
@@ -69,7 +69,7 @@ namespace parc_auto_v1.Controllers
             var model = new Demande
             {
                 TypeVoiture = "utility",
-                ClientId = GetCurrentClientId() // Method to get the current client ID
+                 // Method to get the current client ID
             };
             ViewData["Title"] = "Demand Form";
             return View("DemandForm", model);

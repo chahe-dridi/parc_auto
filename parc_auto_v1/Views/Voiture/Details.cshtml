@@ -65,3 +65,14 @@
     <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a> |
     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
+
+<div style="margin-top: 20px;">
+    <h4>Details for @Model.Matricule</h4>
+    <div>
+        <a asp-action="Details" asp-controller="Vidange" asp-route-id="@Model.Id" class="btn btn-info">Vidange Details</a>
+        <a asp-action="Details" asp-controller="Assurance" asp-route-id="@Model.Id" class="btn btn-info">Assurance Details</a>
+        <a asp-action="Details" asp-controller="Vignette" asp-route-id="@Model.Id" class="btn btn-info">Vignette Details</a>
+        <a asp-action="Details" asp-controller="Sinistre" asp-route-id="@Model.Id" class="btn btn-info">Sinistre Details</a>
+        <a asp-action="Details" asp-controller="VisiteTechnique" asp-route-id="@Model.Id" class="btn btn-info">Visite Technique Details</a>
+    </div>
+</div>

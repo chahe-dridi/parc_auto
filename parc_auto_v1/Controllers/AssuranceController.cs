@@ -43,13 +43,12 @@ namespace parc_auto_v1.Controllers
         }
 
         // GET: Assurance/Create
-     
+
         public IActionResult Create()
         {
             ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule");
             return View();
         }
-
 
         // POST: Assurance/Create
         [HttpPost]
@@ -79,6 +78,7 @@ namespace parc_auto_v1.Controllers
             {
                 return NotFound();
             }
+
             ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", assurance.VoitureId);
             return View(assurance);
         }
@@ -93,7 +93,7 @@ namespace parc_auto_v1.Controllers
                 return NotFound();
             }
 
-         //   if (ModelState.IsValid)
+          //  if (ModelState.IsValid)
             {
                 try
                 {
@@ -116,7 +116,6 @@ namespace parc_auto_v1.Controllers
             ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", assurance.VoitureId);
             return View(assurance);
         }
-
         // GET: Assurance/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
