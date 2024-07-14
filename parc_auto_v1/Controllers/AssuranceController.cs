@@ -42,12 +42,20 @@ namespace parc_auto_v1.Controllers
             return View(assurance);
         }
 
-        // GET: Assurance/Create
 
-        public IActionResult Create()
+
+        [HttpGet]
+        public IActionResult Create(int voitureId)
         {
-            ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule");
-            return View();
+            var model = new Assurance
+            {
+                VoitureId = voitureId // Set the VoitureId in the model
+            };
+
+            // Set up the ViewBag to use in the dropdown if needed
+            ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", voitureId);
+
+            return View(model);
         }
 
         // POST: Assurance/Create
@@ -55,12 +63,13 @@ namespace parc_auto_v1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DateEchance,DateValide,Alert,PrixUnitaire,VoitureId")] Assurance assurance)
         {
-           // if (ModelState.IsValid)
+          //  if (ModelState.IsValid)
             {
                 await _assuranceService.AddAssuranceAsync(assurance);
                 TempData["SuccessMessage"] = "Assurance has been created successfully!";
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", assurance.VoitureId);
             return View(assurance);
         }
