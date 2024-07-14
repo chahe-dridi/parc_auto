@@ -14,7 +14,7 @@ builder.Services.AddScoped<IVignetteService, VignetteService>(); // Register the
 builder.Services.AddScoped<IVidangeService, VidangeService>();
 builder.Services.AddScoped<ISinistreService, SinistreService>();
 builder.Services.AddScoped<IAssuranceService, AssuranceService>();
-
+builder.Services.AddScoped<IDemandesService, DemandesService>();
 // Configure the DbContext with the connection string
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {

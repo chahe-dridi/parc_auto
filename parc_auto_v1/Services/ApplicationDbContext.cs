@@ -15,6 +15,7 @@ namespace parc_auto_v1.Models
         public DbSet<Sinistre> Sinistres { get; set; }
         public DbSet<Assurance> Assurances { get; set; }
         public DbSet<Vignette> Vignettes { get; set; }
+        public DbSet<Demandes> Demandes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,27 +29,32 @@ namespace parc_auto_v1.Models
             modelBuilder.Entity<Voiture>()
                 .HasMany(v => v.VisiteTechniques)
                 .WithOne(vt => vt.Voiture)
-                .HasForeignKey(vt => vt.VoitureId);
+                .HasForeignKey(vt => vt.VoitureId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Voiture>()
                 .HasMany(v => v.Vidanges)
                 .WithOne(vd => vd.Voiture)
-                .HasForeignKey(vd => vd.VoitureId);
+                .HasForeignKey(vd => vd.VoitureId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Voiture>()
                 .HasMany(v => v.Sinistres)
                 .WithOne(s => s.Voiture)
-                .HasForeignKey(s => s.VoitureId);
+                .HasForeignKey(s => s.VoitureId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Voiture>()
                 .HasMany(v => v.Assurances)
                 .WithOne(a => a.Voiture)
-                .HasForeignKey(a => a.VoitureId);
+                .HasForeignKey(a => a.VoitureId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Voiture>()
                 .HasMany(v => v.Vignettes)
                 .WithOne(vg => vg.Voiture)
-                .HasForeignKey(vg => vg.VoitureId);
+                .HasForeignKey(vg => vg.VoitureId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

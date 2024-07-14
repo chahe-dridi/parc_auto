@@ -12,8 +12,8 @@ using parc_auto_v1.Models;
 namespace parc_auto_v1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240706123621_secendMigration")]
-    partial class secendMigration
+    [Migration("20240714202747_AddEtatToD")]
+    partial class AddEtatToD
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,6 +53,76 @@ namespace parc_auto_v1.Migrations
                     b.HasIndex("VoitureId");
 
                     b.ToTable("Assurances");
+                });
+
+            modelBuilder.Entity("parc_auto_v1.Models.Demandes", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AffectationDepartement")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("DateArrivee")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateDepart")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Destination")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Etat")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("IdEmploye")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Mission")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("NiveauPriorite")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Prenom")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TypeVoiture")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("VoitureId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VoitureId");
+
+                    b.ToTable("Demandes");
                 });
 
             modelBuilder.Entity("parc_auto_v1.Models.Sinistre", b =>
@@ -248,6 +318,15 @@ namespace parc_auto_v1.Migrations
                         .HasForeignKey("VoitureId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Voiture");
+                });
+
+            modelBuilder.Entity("parc_auto_v1.Models.Demandes", b =>
+                {
+                    b.HasOne("parc_auto_v1.Models.Voiture", "Voiture")
+                        .WithMany()
+                        .HasForeignKey("VoitureId");
 
                     b.Navigation("Voiture");
                 });

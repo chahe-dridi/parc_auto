@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace parc_auto_v1.Models
 {
-    public class Demande
+    public class Demandes
     {
         [Key]
         public int Id { get; set; }
@@ -18,7 +18,8 @@ namespace parc_auto_v1.Models
         public string Prenom { get; set; }
 
         [Required]
-        public int IdEmploye { get; set; }
+        [StringLength(50)] // Change this if IdEmploye is longer
+        public string IdEmploye { get; set; } // Changed to string
 
         [Required]
         [StringLength(100)]
@@ -54,5 +55,12 @@ namespace parc_auto_v1.Models
         // Navigation property
         [ForeignKey("VoitureId")]
         public virtual Voiture Voiture { get; set; }
+
+        // Etat can be null
+        [StringLength(50)]
+        public string? Etat { get; set; } // Changed to nullable
     }
+
+
+
 }

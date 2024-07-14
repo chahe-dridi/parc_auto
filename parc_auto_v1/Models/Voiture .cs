@@ -17,5 +17,7 @@
         public ICollection<Sinistre> Sinistres { get; set; }
         public ICollection<Assurance> Assurances { get; set; }
         public ICollection<Vignette> Vignettes { get; set; }
+
+
     }
 }

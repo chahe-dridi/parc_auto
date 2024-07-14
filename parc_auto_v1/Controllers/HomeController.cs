@@ -54,7 +54,7 @@ namespace parc_auto_v1.Controllers
         // Action to display the demand form for 4 places cars
         public IActionResult DemandFormForFourPlaces()
         {
-            var model = new Demande
+            var model = new Demandes
             {
                 TypeVoiture = "4 places",
                   // Method to get the current client ID
@@ -66,7 +66,7 @@ namespace parc_auto_v1.Controllers
         // Action to display the demand form for utility cars
         public IActionResult DemandFormForUtility()
         {
-            var model = new Demande
+            var model = new Demandes
             {
                 TypeVoiture = "utility",
                  // Method to get the current client ID
@@ -77,7 +77,7 @@ namespace parc_auto_v1.Controllers
 
         // Action method to handle form submission
         [HttpPost]
-        public IActionResult SubmitDemandForm(Demande model)
+        public IActionResult SubmitDemandForm(Demandes model)
         {
             // Process form submission logic here (save to database, etc.)
             // Redirect to a thank you page or another appropriate action
