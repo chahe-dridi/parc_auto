@@ -43,18 +43,20 @@ namespace parc_auto_v1.Controllers
         }
 
         // GET: Sinistre/Create
-        public IActionResult Create()
+        // GET: Sinistre/Create
+        public IActionResult Create(int? voitureId)
         {
-            ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule");
+            ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", voitureId);
             return View();
         }
+
 
         // POST: Sinistre/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DateDommage,Observation,Description,AcceptationPourFixe,EtatDeVoiture,PrixFixe,VoitureId")] Sinistre sinistre)
         {
-         //   if (ModelState.IsValid)
+            //if (ModelState.IsValid)
             {
                 await _sinistreService.AddSinistreAsync(sinistre);
                 TempData["SuccessMessage"] = "Sinistre has been created successfully!";
@@ -63,6 +65,41 @@ namespace parc_auto_v1.Controllers
             ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", sinistre.VoitureId);
             return View(sinistre);
         }
+
+        // POST: Sinistre/Edit/5
+     /*   [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DateDommage,Observation,Description,AcceptationPourFixe,EtatDeVoiture,PrixFixe,VoitureId")] Sinistre sinistre)
+        {
+            if (id != sinistre.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _sinistreService.UpdateSinistreAsync(sinistre);
+                    TempData["SuccessMessage"] = "Sinistre has been updated successfully!";
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!await SinistreExists(sinistre.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", sinistre.VoitureId);
+            return View(sinistre);
+        }*/
+
 
         // GET: Sinistre/Edit/5
         public async Task<IActionResult> Edit(int? id)

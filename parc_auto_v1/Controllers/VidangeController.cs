@@ -43,19 +43,22 @@ namespace parc_auto_v1.Controllers
         }
 
         // GET: Vidange/Create
-        public async Task<IActionResult> Create()
+        // GET: Vidange/Create
+        public async Task<IActionResult> Create(int? voitureId)
         {
             var voitures = await _voitureService.GetAllVoituresAsync();
-            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule");
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", voitureId);
             return View();
         }
 
+
+        // POST: Vidange/Create
         // POST: Vidange/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DateIntervention,TypeIntervention,Fournisseur,NFacture,Kilometrage,OperationDetails,MontantHt,VoitureId")] Vidange vidange)
         {
-        //    if (ModelState.IsValid)
+          //  if (ModelState.IsValid)
             {
                 await _vidangeService.AddVidangeAsync(vidange);
                 TempData["SuccessMessage"] = "Vidange has been created successfully!";
@@ -65,6 +68,7 @@ namespace parc_auto_v1.Controllers
             ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", vidange.VoitureId);
             return View(vidange);
         }
+
 
         // GET: Vidange/Edit/5
         public async Task<IActionResult> Edit(int? id)

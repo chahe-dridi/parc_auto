@@ -28,7 +28,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.DateIntervention.ToShortDateString()</td>
+                <td>@item.DateIntervention.ToString("yyyy-MM-dd")</td> <!-- Updated to use ToString -->
                 <td>@item.TypeIntervention</td>
                 <td>@item.Fournisseur</td>
                 <td>@item.NFacture</td>

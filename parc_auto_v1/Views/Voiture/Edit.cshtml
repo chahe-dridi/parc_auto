@@ -48,7 +48,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Disponibilite" class="control-label"></label>
-                <input asp-for="Disponibilite" class="form-control" />
+                <select asp-for="Disponibilite" class="form-control">
+                    <option value="Pre Reserved">Pre Reserved</option>
+                    <option value="Reserved">Reserved</option>
+                    <option value="Disponible">Disponible</option>
+                </select>
                 <span asp-validation-for="Disponibilite" class="text-danger"></span>
             </div>
             <div class="form-group">
