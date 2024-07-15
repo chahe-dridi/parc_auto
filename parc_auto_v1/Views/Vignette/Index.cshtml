@@ -1,31 +1,41 @@
 ﻿@model IEnumerable<parc_auto_v1.Models.Vignette>
 
 @{
-    ViewData["Title"] = "Vignette Index";
+    ViewData["Title"] = "Vignette List";
 }
 
-<h1>Vignette Index</h1>
+<h1>Vignette List</h1>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DateEchance)
+                @Html.DisplayNameFor(model => model.First().DateEchance)  <!-- Adjust based on your actual properties -->
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateValide)
+                @Html.DisplayNameFor(model => model.First().DateValide)   <!-- Adjust based on your actual properties -->
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Alert)
+                @Html.DisplayNameFor(model => model.First().PrixUnitaire)  <!-- Adjust based on your actual properties -->
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PrixUnitaire)
+                @Html.DisplayNameFor(model => model.First().Alert)        <!-- Adjust based on your actual properties -->
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Voiture.Matricule)
+                @Html.DisplayNameFor(model => model.First().VoitureId)    <!-- Adjust based on your actual properties -->
             </th>
             <th></th>
         </tr>
@@ -41,18 +51,18 @@
                     @Html.DisplayFor(modelItem => item.DateValide)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Alert)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.PrixUnitaire)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Voiture.Matricule)
+                    @Html.DisplayFor(modelItem => item.Alert)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VoitureId)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }

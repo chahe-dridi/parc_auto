@@ -42,12 +42,17 @@ namespace parc_auto_v1.Controllers
             return View(visiteTechnique);
         }
 
-        // GET: VisiteTechnique/Create
-        public async Task<IActionResult> Create()
+        // GET: VisiteTechnique/Create/{voitureId}
+        public async Task<IActionResult> Create(int voitureId)
         {
+            var model = new VisiteTechnique
+            {
+                VoitureId = voitureId
+            };
+
             var voitures = await _voitureService.GetAllVoituresAsync();
-            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule");
-            return View();
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", voitureId);
+            return View(model);
         }
 
         // POST: VisiteTechnique/Create
@@ -55,12 +60,13 @@ namespace parc_auto_v1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DateEchance,DateValide,Alert,PrixUnitaire,VoitureId")] VisiteTechnique visiteTechnique)
         {
-         //   if (ModelState.IsValid)
+            //if (ModelState.IsValid)
             {
                 await _visiteTechniqueService.AddVisiteTechniqueAsync(visiteTechnique);
                 TempData["SuccessMessage"] = "Visite technique has been created successfully!";
                 return RedirectToAction(nameof(Index));
             }
+
             var voitures = await _voitureService.GetAllVoituresAsync();
             ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", visiteTechnique.VoitureId);
             return View(visiteTechnique);

@@ -43,11 +43,18 @@ namespace parc_auto_v1.Controllers
         }
 
         // GET: Vignette/Create
-        public async Task<IActionResult> Create()
+        [HttpGet]
+        public async Task<IActionResult> Create(int? voitureId)
         {
+            var model = new Vignette
+            {
+                VoitureId = voitureId ?? 0 // Set the VoitureId in the model
+            };
+
             var voitures = await _voitureService.GetAllVoituresAsync();
-            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule");
-            return View();
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", voitureId);
+
+            return View(model);
         }
 
         // POST: Vignette/Create
@@ -55,7 +62,7 @@ namespace parc_auto_v1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DateEchance,DateValide,Alert,PrixUnitaire,VoitureId")] Vignette vignette)
         {
-           // if (ModelState.IsValid)
+          //  if (ModelState.IsValid)
             {
                 await _vignetteService.AddVignetteAsync(vignette);
                 TempData["SuccessMessage"] = "Vignette has been created successfully!";
@@ -94,7 +101,7 @@ namespace parc_auto_v1.Controllers
                 return NotFound();
             }
 
-          //  if (ModelState.IsValid)
+            //if (ModelState.IsValid)
             {
                 try
                 {

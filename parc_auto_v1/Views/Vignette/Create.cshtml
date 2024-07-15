@@ -13,12 +13,12 @@
         <form asp-action="Create">
             <div class="form-group">
                 <label asp-for="DateEchance" class="control-label"></label>
-                <input asp-for="DateEchance" class="form-control" />
+                <input asp-for="DateEchance" class="form-control" type="date" />
                 <span asp-validation-for="DateEchance" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DateValide" class="control-label"></label>
-                <input asp-for="DateValide" class="form-control" />
+                <input asp-for="DateValide" class="form-control" type="date" />
                 <span asp-validation-for="DateValide" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -45,3 +45,9 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
