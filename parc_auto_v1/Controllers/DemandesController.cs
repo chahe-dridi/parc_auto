@@ -22,15 +22,13 @@ namespace parc_auto_v1.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var demande = await _demandesService.GetDemandeByIdAsync(id); // Adjust your service call
+            var demande = await _demandesService.GetDemandeByIdAsync(id);
             if (demande == null)
             {
                 return NotFound();
             }
             return View(demande);
         }
-
-
 
         public IActionResult Create()
         {
@@ -43,6 +41,7 @@ namespace parc_auto_v1.Controllers
         {
            // if (ModelState.IsValid)
             {
+                demande.Etat = "En attente"; // Set Etat to "En attente"
                 await _demandesService.AddDemandeAsync(demande);
                 return RedirectToAction(nameof(Index));
             }
@@ -68,7 +67,7 @@ namespace parc_auto_v1.Controllers
                 return NotFound();
             }
 
-        //    if (ModelState.IsValid)
+            //if (ModelState.IsValid)
             {
                 await _demandesService.UpdateDemandeAsync(demande);
                 return RedirectToAction(nameof(Index));

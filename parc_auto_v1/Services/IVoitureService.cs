@@ -11,5 +11,8 @@ namespace parc_auto_v1.Services
         Task AddVoitureAsync(Voiture voiture);
         Task UpdateVoitureAsync(Voiture voiture);
         Task DeleteVoitureAsync(int id);
+
+        Task<List<Voiture>> GetAvailableVoituresAsync();
+
     }
 }

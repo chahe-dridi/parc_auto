@@ -47,5 +47,13 @@ namespace parc_auto_v1.Services
         {
             return await _context.Voitures.AnyAsync(e => e.Id == id);
         }
+
+        // New method to get available cars
+        public async Task<List<Voiture>> GetAvailableVoituresAsync()
+        {
+            return await _context.Voitures
+                                 .Where(v => v.Disponibilite == "Disponible")
+                                 .ToListAsync();
+        }
     }
 }
