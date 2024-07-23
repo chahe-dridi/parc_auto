@@ -39,9 +39,7 @@ namespace parc_auto_v1.Models
         [Required]
         public DateTime DateArrivee { get; set; }
 
-        [Required]
-        [Range(1, 5)]
-        public int NiveauPriorite { get; set; }
+       
 
         [StringLength(255)]
         public string Description { get; set; }

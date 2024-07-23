@@ -41,17 +41,7 @@
             <input asp-for="DateArrivee" class="form-control" type="date" />
             <span asp-validation-for="DateArrivee" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="NiveauPriorite">Niveau de Priorité:</label>
-            <select asp-for="NiveauPriorite" class="form-control">
-                <option value="1">1: Priorité la plus basse, flexibilité maximale avec l'attribution des voitures.</option>
-                <option value="2">2: Faible priorité, légère flexibilité avec l'attribution des voitures.</option>
-                <option value="3">3: Priorité moyenne, flexibilité modérée avec l'attribution des voitures.</option>
-                <option value="4">4: Haute priorité, flexibilité limitée avec l'attribution des voitures.</option>
-                <option value="5">5: Priorité la plus haute, aucune flexibilité, la voiture demandée doit être disponible au moment et au type demandés.</option>
-            </select>
-            <span asp-validation-for="NiveauPriorite" class="text-danger"></span>
-        </div>
+        
         <div class="form-group">
             <label asp-for="Description">Description:</label>
             <textarea asp-for="Description" class="form-control" rows="4"></textarea>

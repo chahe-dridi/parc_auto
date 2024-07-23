@@ -1,142 +1,186 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
-using parc_auto_v1.Services;  // Add this line
+using parc_auto_v1.Services;
+using System.Linq;
 using System.Threading.Tasks;
 
-public class VoitureController : Controller
+namespace parc_auto_v1.Controllers // Change namespace to Controllers
 {
-    private readonly IVoitureService _voitureService;
-
-    public VoitureController(IVoitureService voitureService)
+    public class VoitureController : Controller
     {
-        _voitureService = voitureService;
-    }
+        private readonly IVoitureService _voitureService;
+        private readonly IMarqueService _marqueService;
+        private readonly IModeleService _modeleService;
 
-    // GET: Voiture
-    public async Task<IActionResult> Index()
-    {
-        var voitures = await _voitureService.GetAllVoituresAsync();
-        return View(voitures);
-    }
-
-    // GET: Voiture/Details/5
-    public async Task<IActionResult> Details(int? id)
-    {
-        if (id == null)
+        public VoitureController(IVoitureService voitureService, IMarqueService marqueService, IModeleService modeleService)
         {
-            return NotFound();
+            _voitureService = voitureService;
+            _marqueService = marqueService;
+            _modeleService = modeleService;
         }
 
-        var voiture = await _voitureService.GetVoitureByIdAsync(id.Value);
-        if (voiture == null)
+        // GET: Voiture
+        public async Task<IActionResult> Index()
         {
-            return NotFound();
+            var voitures = await _voitureService.GetAllVoituresAsync();
+            return View(voitures);
         }
 
-        return View(voiture);
-    }
-
-    // GET: Voiture/Create
-    public IActionResult Create()
-    {
-        return View();
-    }
-
-    // POST: Voiture/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Matricule,TypeVoiture,Marque,Modele,Km,Carburant,Etat,Disponibilite")] Voiture voiture)
-    {
-      //  if (ModelState.IsValid)
+        // GET: Voiture/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
-            await _voitureService.AddVoitureAsync(voiture);
-            TempData["SuccessMessage"] = "Voiture has been added successfully!";
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var voiture = await _voitureService.GetVoitureByIdAsync(id.Value);
+            if (voiture == null)
+            {
+                return NotFound();
+            }
+
+            return View(voiture);
+        }
+
+        // GET: Voiture/Create
+        public async Task<IActionResult> Create()
+        {
+            ViewBag.Marques = await _marqueService.GetAllMarquesAsync();
+            return View();
+        }
+
+        // POST: Voiture/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Matricule,TypeVoiture,MarqueId,ModeleId,Km,Carburant,Etat,Disponibilite")] Voiture voiture)
+        {
+            if (ModelState.IsValid)
+            {
+                await _voitureService.AddVoitureAsync(voiture);
+                TempData["SuccessMessage"] = "Voiture has been added successfully!";
+                return RedirectToAction(nameof(Index));
+            }
+            ViewBag.Marques = await _marqueService.GetAllMarquesAsync();
+            return View(voiture);
+        }
+
+        // GET: Voiture/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var voiture = await _voitureService.GetVoitureByIdAsync(id.Value);
+            if (voiture == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Marques = await _marqueService.GetAllMarquesAsync();
+            ViewBag.Modeles = await _modeleService.GetAllModelesAsync();
+            return View(voiture);
+        }
+
+        // POST: Voiture/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Matricule,TypeVoiture,MarqueId,ModeleId,Km,Carburant,Etat,Disponibilite")] Voiture voiture)
+        {
+            if (id != voiture.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _voitureService.UpdateVoitureAsync(voiture);
+                    TempData["SuccessMessage"] = "Voiture has been updated successfully!";
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!await VoitureExists(voiture.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewBag.Marques = await _marqueService.GetAllMarquesAsync();
+            ViewBag.Modeles = await _modeleService.GetAllModelesAsync();
+            return View(voiture);
+        }
+
+        // GET: Voiture/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var voiture = await _voitureService.GetVoitureByIdAsync(id.Value);
+            if (voiture == null)
+            {
+                return NotFound();
+            }
+
+            return View(voiture);
+        }
+
+        // POST: Voiture/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            await _voitureService.DeleteVoitureAsync(id);
+            TempData["SuccessMessage"] = "Voiture has been deleted successfully!";
             return RedirectToAction(nameof(Index));
         }
-        return View(voiture);
-    }
 
-    // GET: Voiture/Edit/5
-    public async Task<IActionResult> Edit(int? id)
-    {
-        if (id == null)
+        private async Task<bool> VoitureExists(int id)
         {
-            return NotFound();
+            var voiture = await _voitureService.GetVoitureByIdAsync(id);
+            return voiture != null;
         }
 
-        var voiture = await _voitureService.GetVoitureByIdAsync(id.Value);
-        if (voiture == null)
+        [HttpPost]
+        public async Task<IActionResult> AddMarque(string newMarque)
         {
-            return NotFound();
-        }
-
-        return View(voiture);
-    }
-
-    // POST: Voiture/Edit/5
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, [Bind("Id,Matricule,TypeVoiture,Marque,Modele,Km,Carburant,Etat,Disponibilite")] Voiture voiture)
-    {
-        if (id != voiture.Id)
-        {
-            return NotFound();
-        }
-
-       // if (ModelState.IsValid)
-        {
-            try
+            if (!string.IsNullOrWhiteSpace(newMarque))
             {
-                await _voitureService.UpdateVoitureAsync(voiture);
-                TempData["SuccessMessage"] = "Voiture has been updated successfully!";
+                await _marqueService.AddMarqueAsync(new Marque { Nom = newMarque });
+                return Ok();
             }
-            catch (DbUpdateConcurrencyException)
+            return BadRequest("Invalid marque name");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddModele(string newModele, int marqueId)
+        {
+            if (!string.IsNullOrWhiteSpace(newModele))
             {
-                if (!await VoitureExists(voiture.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                await _modeleService.AddModeleAsync(new Modele { Nom = newModele, MarqueId = marqueId });
+                return Ok();
             }
-            return RedirectToAction(nameof(Index));
+            return BadRequest("Invalid modele name or marque ID");
         }
-        return View(voiture);
-    }
 
-    // GET: Voiture/Delete/5
-    public async Task<IActionResult> Delete(int? id)
-    {
-        if (id == null)
+        [HttpGet]
+        public async Task<IActionResult> GetModelesByMarqueId(int marqueId)
         {
-            return NotFound();
+            var modeles = await _modeleService.GetAllModelesAsync();
+            var filteredModeles = modeles.Where(m => m.MarqueId == marqueId).ToList();
+            return Json(filteredModeles);
         }
-
-        var voiture = await _voitureService.GetVoitureByIdAsync(id.Value);
-        if (voiture == null)
-        {
-            return NotFound();
-        }
-
-        return View(voiture);
-    }
-
-    // POST: Voiture/Delete/5
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        await _voitureService.DeleteVoitureAsync(id);
-        TempData["SuccessMessage"] = "Voiture has been deleted successfully!";
-        return RedirectToAction(nameof(Index));
-    }
-
-    private async Task<bool> VoitureExists(int id)
-    {
-        var voiture = await _voitureService.GetVoitureByIdAsync(id);
-        return voiture != null;
     }
 }

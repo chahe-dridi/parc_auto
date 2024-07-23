@@ -18,27 +18,31 @@
             </div>
             <div class="form-group">
                 <label asp-for="TypeVoiture" class="control-label"></label>
-                <select id="typeVoitureSelect" asp-for="TypeVoiture" class="form-control">
-                    <option value="">Select Type</option>
+                <select asp-for="TypeVoiture" class="form-control">
+                    <option value="4 places">4 places</option>
+                    <option value="utilities">Utilities</option>
                 </select>
-                <button type="button" class="btn btn-link" id="addTypeBtn">Add New Type</button>
                 <span asp-validation-for="TypeVoiture" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Marque" class="control-label"></label>
-                <select id="marqueSelect" asp-for="Marque" class="form-control">
-                    <option value="">Select Marque</option>
+                <label asp-for="MarqueId" class="control-label"></label>
+                <select asp-for="MarqueId" class="form-control" id="marque-select">
+                    <option value="">-- Select Marque --</option>
+                    @foreach (var marque in ViewBag.Marques)
+                    {
+                        <option value="@marque.Id">@marque.Nom</option>
+                    }
                 </select>
-                <button type="button" class="btn btn-link" id="addMarqueBtn">Add New Marque</button>
-                <span asp-validation-for="Marque" class="text-danger"></span>
+                <button type="button" class="btn btn-primary" id="addMarque">Add Marque</button>
+                <span asp-validation-for="MarqueId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Modele" class="control-label"></label>
-                <select id="modeleSelect" asp-for="Modele" class="form-control">
-                    <option value="">Select Modele</option>
+                <label asp-for="ModeleId" class="control-label"></label>
+                <select asp-for="ModeleId" class="form-control" id="modele-select">
+                    <option value="">-- Select Modele --</option>
                 </select>
-                <button type="button" class="btn btn-link" id="addModeleBtn">Add New Modele</button>
-                <span asp-validation-for="Modele" class="text-danger"></span>
+                <button type="button" class="btn btn-primary" id="addModele">Add Modele</button>
+                <span asp-validation-for="ModeleId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Km" class="control-label"></label>
@@ -47,196 +51,75 @@
             </div>
             <div class="form-group">
                 <label asp-for="Carburant" class="control-label"></label>
-                <select asp-for="Carburant" class="form-control">
-                    <option value="Essence">Essence</option>
-                    <option value="Gazol">Gazol</option>
-                </select>
+                <input asp-for="Carburant" class="form-control" />
                 <span asp-validation-for="Carburant" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Etat" class="control-label"></label>
-                <input asp-for="Etat" class="form-control" />
+                <select asp-for="Etat" class="form-control">
+                    <option value="neuf">Neuf</option>
+                    <option value="bon">Bon</option>
+                    <option value="moyen">Moyen</option>
+                    <option value="mauvais">Mauvais</option>
+                </select>
                 <span asp-validation-for="Etat" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Disponibilite" class="control-label"></label>
-                <select asp-for="Disponibilite" class="form-control">
-                    <option value="Pre Reserved">Pre Reserved</option>
-                    <option value="Reserved">Reserved</option>
-                    <option value="Disponible">Disponible</option>
-                    <option value="En Arrivage">En Arrivage</option>
-                </select>
+                <input asp-for="Disponibilite" class="form-control" />
                 <span asp-validation-for="Disponibilite" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
         </form>
     </div>
 </div>
 
-<!-- Modal for adding new TypeVoiture -->
-<div class="modal fade" id="addTypeModal" tabindex="-1" role="dialog" aria-labelledby="addTypeModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addTypeModalLabel">Add New Type Voiture</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="addTypeForm">
-                    <div class="form-group">
-                        <label for="newTypeVoiture">Type Voiture</label>
-                        <input type="text" class="form-control" id="newTypeVoiture" required />
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="saveNewType">Add Type</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for adding new Marque -->
-<div class="modal fade" id="addMarqueModal" tabindex="-1" role="dialog" aria-labelledby="addMarqueModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addMarqueModalLabel">Add New Marque</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="addMarqueForm">
-                    <div class="form-group">
-                        <label for="newMarque">Marque</label>
-                        <input type="text" class="form-control" id="newMarque" required />
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="saveNewMarque">Add Marque</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for adding new Modele -->
-<div class="modal fade" id="addModeleModal" tabindex="-1" role="dialog" aria-labelledby="addModeleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addModeleModalLabel">Add New Modele</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="addModeleForm">
-                    <div class="form-group">
-                        <label for="newModele">Modele</label>
-                        <input type="text" class="form-control" id="newModele" required />
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="saveNewModele">Add Modele</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        var typeVoitureList = [
-            { value: "4 Places", text: "4 Places" },
-            { value: "Utilitaire", text: "Utilitaire" }
-        ];
-
-        var marqueList = [
-            // Populate with initial data if available
-        ];
-
-        var modeleList = [
-            // Populate with initial data if available
-        ];
-
-        function populateSelect(selectId, list) {
-            const select = document.getElementById(selectId);
-            select.innerHTML = '<option value="">Select</option>';
-            list.forEach(function (item) {
-                const option = document.createElement('option');
-                option.value = item.value;
-                option.text = item.text;
-                select.add(option);
+        $(document).ready(function () {
+            $('#marque-select').change(function () {
+                var marqueId = $(this).val();
+                if (marqueId) {
+                    $.getJSON('@Url.Action("GetModelesByMarqueId", "Voiture")', { marqueId: marqueId }, function (data) {
+                        var $modeleSelect = $('#modele-select');
+                        $modeleSelect.empty();
+                        $modeleSelect.append('<option value="">-- Select Modele --</option>');
+                        $.each(data, function (i, modele) {
+                            $modeleSelect.append('<option value="' + modele.id + '">' + modele.nom + '</option>');
+                        });
+                    });
+                } else {
+                    $('#modele-select').empty().append('<option value="">-- Select Modele --</option>');
+                }
             });
-        }
 
-        document.getElementById('addTypeBtn').addEventListener('click', function () {
-            $('#addTypeModal').modal('show');
+            $('#addMarque').click(function () {
+                var newMarque = prompt("Enter new Marque:");
+                if (newMarque) {
+                    $.post('@Url.Action("AddMarque", "Voiture")', { newMarque: newMarque }, function () {
+                        location.reload();
+                    }).fail(function () {
+                        alert("Failed to add Marque.");
+                    });
+                }
+            });
+
+            $('#addModele').click(function () {
+                var newModele = prompt("Enter new Modele:");
+                var marqueId = $('#marque-select').val();
+                if (newModele && marqueId) {
+                    $.post('@Url.Action("AddModele", "Voiture")', { newModele: newModele, marqueId: marqueId }, function () {
+                        location.reload();
+                    }).fail(function () {
+                        alert("Failed to add Modele.");
+                    });
+                } else {
+                    alert("Please select a Marque.");
+                }
+            });
         });
-
-        document.getElementById('saveNewType').addEventListener('click', function () {
-            var newType = document.getElementById('newTypeVoiture').value;
-            if (newType) {
-                typeVoitureList.push({ value: newType, text: newType });
-                populateSelect('typeVoitureSelect', typeVoitureList);
-                document.getElementById('newTypeVoiture').value = '';
-                $('#addTypeModal').modal('hide');
-            } else {
-                alert('Please enter a type.');
-            }
-        });
-
-        document.getElementById('addMarqueBtn').addEventListener('click', function () {
-            $('#addMarqueModal').modal('show');
-        });
-
-        document.getElementById('saveNewMarque').addEventListener('click', function () {
-            var newMarque = document.getElementById('newMarque').value;
-            if (newMarque) {
-                marqueList.push({ value: newMarque, text: newMarque });
-                populateSelect('marqueSelect', marqueList);
-                document.getElementById('newMarque').value = '';
-                $('#addMarqueModal').modal('hide');
-            } else {
-                alert('Please enter a marque.');
-            }
-        });
-
-        document.getElementById('addModeleBtn').addEventListener('click', function () {
-            $('#addModeleModal').modal('show');
-        });
-
-        document.getElementById('saveNewModele').addEventListener('click', function () {
-            var newModele = document.getElementById('newModele').value;
-            if (newModele) {
-                modeleList.push({ value: newModele, text: newModele });
-                populateSelect('modeleSelect', modeleList);
-                document.getElementById('newModele').value = '';
-                $('#addModeleModal').modal('hide');
-            } else {
-                alert('Please enter a modele.');
-            }
-        });
-
-        // Populate the selects with initial data
-        populateSelect('typeVoitureSelect', typeVoitureList);
-        populateSelect('marqueSelect', marqueList);
-        populateSelect('modeleSelect', modeleList);
     </script>
 }

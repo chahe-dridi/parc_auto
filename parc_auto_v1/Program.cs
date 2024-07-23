@@ -15,6 +15,13 @@ builder.Services.AddScoped<IVidangeService, VidangeService>();
 builder.Services.AddScoped<ISinistreService, SinistreService>();
 builder.Services.AddScoped<IAssuranceService, AssuranceService>();
 builder.Services.AddScoped<IDemandesService, DemandesService>();
+
+
+
+
+builder.Services.AddScoped<IMarqueService, MarqueService>();
+builder.Services.AddScoped<IModeleService, ModeleService>();
+
 // Configure the DbContext with the connection string
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {

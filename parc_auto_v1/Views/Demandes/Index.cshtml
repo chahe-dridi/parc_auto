@@ -20,7 +20,7 @@
             <th>@Html.DisplayNameFor(model => model.Destination)</th>
             <th>@Html.DisplayNameFor(model => model.DateDepart)</th>
             <th>@Html.DisplayNameFor(model => model.DateArrivee)</th>
-            <th>@Html.DisplayNameFor(model => model.NiveauPriorite)</th>
+        
             <th>@Html.DisplayNameFor(model => model.Mission)</th>
             <th>@Html.DisplayNameFor(model => model.Etat)</th>
 
@@ -40,7 +40,7 @@
                 <td>@Html.DisplayFor(modelItem => item.Destination)</td>
                 <td>@Html.DisplayFor(modelItem => item.DateDepart)</td>
                 <td>@Html.DisplayFor(modelItem => item.DateArrivee)</td>
-                <td>@Html.DisplayFor(modelItem => item.NiveauPriorite)</td>
+            
                 <td>@Html.DisplayFor(modelItem => item.Mission)</td>
                 <td>@Html.DisplayFor(modelItem => item.Etat)</td>
                 <td>@(item.Voiture != null ? Html.DisplayFor(modelItem => item.Voiture.Matricule) : "N/A")</td>

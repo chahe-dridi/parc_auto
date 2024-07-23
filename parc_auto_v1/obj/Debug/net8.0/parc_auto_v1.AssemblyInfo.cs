@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("parc_auto_v1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bec8a24b45bd97ee030e4e8449478f34e96bcff1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2e7395bce15add69faa05cc01b2b9df0058a844")]
 [assembly: System.Reflection.AssemblyProductAttribute("parc_auto_v1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("parc_auto_v1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

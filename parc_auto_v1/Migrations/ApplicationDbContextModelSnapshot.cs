@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using parc_auto_v1.Models;
 
 #nullable disable
 
@@ -95,9 +94,6 @@ namespace parc_auto_v1.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("NiveauPriorite")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nom")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -121,6 +117,45 @@ namespace parc_auto_v1.Migrations
                     b.HasIndex("VoitureId");
 
                     b.ToTable("Demandes");
+                });
+
+            modelBuilder.Entity("parc_auto_v1.Models.Marque", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Marques");
+                });
+
+            modelBuilder.Entity("parc_auto_v1.Models.Modele", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("MarqueId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MarqueId");
+
+                    b.ToTable("Modeles");
                 });
 
             modelBuilder.Entity("parc_auto_v1.Models.Sinistre", b =>
@@ -288,23 +323,25 @@ namespace parc_auto_v1.Migrations
                     b.Property<int>("Km")
                         .HasColumnType("int");
 
-                    b.Property<string>("Marque")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("MarqueId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Matricule")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Modele")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ModeleId")
+                        .HasColumnType("int");
 
                     b.Property<string>("TypeVoiture")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MarqueId");
+
+                    b.HasIndex("ModeleId");
 
                     b.ToTable("Voitures");
                 });
@@ -323,10 +360,22 @@ namespace parc_auto_v1.Migrations
             modelBuilder.Entity("parc_auto_v1.Models.Demandes", b =>
                 {
                     b.HasOne("parc_auto_v1.Models.Voiture", "Voiture")
-                        .WithMany()
-                        .HasForeignKey("VoitureId");
+                        .WithMany("Demandes")
+                        .HasForeignKey("VoitureId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Voiture");
+                });
+
+            modelBuilder.Entity("parc_auto_v1.Models.Modele", b =>
+                {
+                    b.HasOne("parc_auto_v1.Models.Marque", "Marque")
+                        .WithMany("Modeles")
+                        .HasForeignKey("MarqueId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Marque");
                 });
 
             modelBuilder.Entity("parc_auto_v1.Models.Sinistre", b =>
@@ -375,7 +424,40 @@ namespace parc_auto_v1.Migrations
 
             modelBuilder.Entity("parc_auto_v1.Models.Voiture", b =>
                 {
+                    b.HasOne("parc_auto_v1.Models.Marque", "Marque")
+                        .WithMany("Voitures")
+                        .HasForeignKey("MarqueId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("parc_auto_v1.Models.Modele", "Modele")
+                        .WithMany("Voitures")
+                        .HasForeignKey("ModeleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Marque");
+
+                    b.Navigation("Modele");
+                });
+
+            modelBuilder.Entity("parc_auto_v1.Models.Marque", b =>
+                {
+                    b.Navigation("Modeles");
+
+                    b.Navigation("Voitures");
+                });
+
+            modelBuilder.Entity("parc_auto_v1.Models.Modele", b =>
+                {
+                    b.Navigation("Voitures");
+                });
+
+            modelBuilder.Entity("parc_auto_v1.Models.Voiture", b =>
+                {
                     b.Navigation("Assurances");
+
+                    b.Navigation("Demandes");
 
                     b.Navigation("Sinistres");
 
