@@ -56,7 +56,7 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Matricule,TypeVoiture,MarqueId,ModeleId,Km,Carburant,Etat,Disponibilite")] Voiture voiture)
         {
-            if (ModelState.IsValid)
+         //   if (ModelState.IsValid)
             {
                 await _voitureService.AddVoitureAsync(voiture);
                 TempData["SuccessMessage"] = "Voiture has been added successfully!";
@@ -66,6 +66,7 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
             return View(voiture);
         }
 
+        // GET: Voiture/Edit/5
         // GET: Voiture/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -81,9 +82,10 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
             }
 
             ViewBag.Marques = await _marqueService.GetAllMarquesAsync();
-            ViewBag.Modeles = await _modeleService.GetAllModelesAsync();
+            ViewBag.Modeles = await _modeleService.GetModelesByMarqueIdAsync(voiture.MarqueId); // Load modeles based on MarqueId
             return View(voiture);
         }
+
 
         // POST: Voiture/Edit/5
         [HttpPost]
@@ -95,7 +97,7 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+           // if (ModelState.IsValid)
             {
                 try
                 {
@@ -182,5 +184,15 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
             var filteredModeles = modeles.Where(m => m.MarqueId == marqueId).ToList();
             return Json(filteredModeles);
         }
+
+
+
+
+
+
+
+
+
+
     }
 }

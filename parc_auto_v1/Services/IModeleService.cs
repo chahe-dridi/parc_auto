@@ -8,6 +8,10 @@ namespace parc_auto_v1.Services
     {
         Task<IEnumerable<Modele>> GetAllModelesAsync();
         Task<Modele> GetModeleByIdAsync(int id);
+
+
+        Task<List<Modele>> GetModelesByMarqueIdAsync(int marqueId);
+
         Task AddModeleAsync(Modele modele);
         Task UpdateModeleAsync(Modele modele);
         Task DeleteModeleAsync(int id);

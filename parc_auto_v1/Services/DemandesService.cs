@@ -14,15 +14,34 @@ namespace parc_auto_v1.Services
             _context = context;
         }
 
-        public async Task<List<Demandes>> GetAllDemandesAsync() // Change return type for consistency
+      /*  public async Task<List<Demandes>> GetAllDemandesAsync() // Change return type for consistency
         {
             return await _context.Demandes.ToListAsync();
+        }*/
+
+        public async Task<List<Demandes>> GetAllDemandesAsync()
+        {
+            return await _context.Demandes
+                                 .Include(d => d.Voiture) // Include the Voiture navigation property
+                                 .ToListAsync();
         }
+
+        /*public async Task<Demandes> GetDemandeByIdAsync(int id)
+        {
+            return await _context.Demandes.FindAsync(id);
+        }*/
+
 
         public async Task<Demandes> GetDemandeByIdAsync(int id)
         {
-            return await _context.Demandes.FindAsync(id);
+            return await _context.Demandes
+                .Include(d => d.Voiture) // Ensure the related Voiture is included
+                .FirstOrDefaultAsync(d => d.Id == id);
         }
+
+
+
+
 
         public async Task AddDemandeAsync(Demandes demande)
         {

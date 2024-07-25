@@ -24,6 +24,17 @@ namespace parc_auto_v1.Services
             return await _context.Modeles.FindAsync(id);
         }
 
+
+        public async Task<List<Modele>> GetModelesByMarqueIdAsync(int marqueId)
+        {
+            return await _context.Modeles.Where(m => m.MarqueId == marqueId).ToListAsync();
+        }
+
+     
+
+
+
+
         public async Task AddModeleAsync(Modele modele)
         {
             _context.Modeles.Add(modele);
