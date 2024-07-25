@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
 using parc_auto_v1.Services;
+ 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,9 @@ builder.Services.AddScoped<IDemandesService, DemandesService>();
 
 builder.Services.AddScoped<IMarqueService, MarqueService>();
 builder.Services.AddScoped<IModeleService, ModeleService>();
+
+ 
+
 
 // Configure the DbContext with the connection string
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

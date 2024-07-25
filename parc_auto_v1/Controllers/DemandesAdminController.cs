@@ -3,6 +3,14 @@ using parc_auto_v1.Models;
 using parc_auto_v1.Services;
 using System.Threading.Tasks;
 
+
+using System.IO;
+using System.Threading.Tasks;
+using PdfSharpCore.Drawing;
+using PdfSharpCore.Pdf;
+
+
+
 namespace parc_auto_v1.Controllers
 {
     public class DemandesAdminController : Controller
@@ -10,10 +18,14 @@ namespace parc_auto_v1.Controllers
         private readonly IDemandesService _demandesService;
         private readonly IVoitureService _voitureService;
 
-        public DemandesAdminController(IDemandesService demandesService, IVoitureService voitureService)
+   
+
+        public DemandesAdminController(IDemandesService demandesService, IVoitureService voitureService   )
         {
             _demandesService = demandesService;
             _voitureService = voitureService;
+
+         
         }
 
         public async Task<IActionResult> Index()
@@ -132,9 +144,38 @@ namespace parc_auto_v1.Controllers
             ViewBag.AvailableVoitures = availableVoitures;
 
             return View(updatedDemande);
-        } 
+        }
 
-       
+
+
+
+
+
+
+        public async Task<IActionResult> DownloadPdf(int id)
+        {
+            var demande = await _demandesService.GetDemandeByIdAsync(id);
+            if (demande == null)
+            {
+                return NotFound();
+            }
+
+            var pdf = new PdfDocument();
+            var page = pdf.AddPage();
+            var gfx = XGraphics.FromPdfPage(page);
+
+            var font = new XFont("Verdana", 12, XFontStyle.Regular);
+            gfx.DrawString($"Nom: {demande.Nom}", font, XBrushes.Black, new XRect(40, 40, page.Width - 80, page.Height - 80), XStringFormats.TopLeft);
+            gfx.DrawString($"Prenom: {demande.Prenom}", font, XBrushes.Black, new XRect(40, 80, page.Width - 80, page.Height - 80), XStringFormats.TopLeft);
+            // Add more details here...
+
+            using (var stream = new MemoryStream())
+            {
+                pdf.Save(stream, false);
+                var fileBytes = stream.ToArray();
+                return File(fileBytes, "application/pdf", "DemandeDetails.pdf");
+            }
+        }
 
 
 
