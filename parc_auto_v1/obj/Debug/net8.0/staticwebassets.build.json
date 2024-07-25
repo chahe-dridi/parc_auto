@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Wsxk4lgh9ON//kWK0qZzMkhzACsFRXNhvi9tCgVvL/g=",
+  "Hash": "dCKVqru07mO/QoKKwa8DVXsLnQ591RTNcV+iP6tF2hg=",
   "Source": "parc_auto_v1",
   "BasePath": "_content/parc_auto_v1",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\images\\Logo_Banque_de_Tunisie.png",
+      "SourceId": "parc_auto_v1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\",
+      "BasePath": "_content/parc_auto_v1",
+      "RelativePath": "images/Logo_Banque_de_Tunisie.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Logo_Banque_de_Tunisie.png"
     },
     {
       "Identity": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\js\\site.js",
