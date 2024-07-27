@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using PdfSharpCore.Drawing;
 using PdfSharpCore.Pdf;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 
 
 namespace parc_auto_v1.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class DemandesAdminController : Controller
     {
         private readonly IDemandesService _demandesService;

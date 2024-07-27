@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using parc_auto_v1.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,31 +32,33 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                       
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Services
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Voiture" asp-action="Index">Voitures</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="VisiteTechnique" asp-action="Index">Visite Technique</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Vidange" asp-action="Index">Vidange</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Vignette" asp-action="Index">Vignette</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Assurance" asp-action="Index">Assurance</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Sinistre" asp-action="Index">Sinistre</a></li>
-                            </ul>
-                        </li>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Services
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Voiture" asp-action="Index">Voitures</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="VisiteTechnique" asp-action="Index">Visite Technique</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Vidange" asp-action="Index">Vidange</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Vignette" asp-action="Index">Vignette</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Assurance" asp-action="Index">Assurance</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Sinistre" asp-action="Index">Sinistre</a></li>
+                                </ul>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Demandes" asp-action="Index">Demandes</a>
-                         </li>
-                   
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="DemandesAdmin" asp-action="Index">Demandes Admin</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Demandes" asp-action="Index">Demandes</a>
+                            </li>
 
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="DemandesAdmin" asp-action="Index">Demandes Admin</a>
+                            </li>
+                        }
                     </ul>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>

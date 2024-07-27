@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
 using parc_auto_v1.Services;
@@ -7,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace parc_auto_v1.Controllers // Change namespace to Controllers
 {
+    [Authorize(Roles="admin")]
     public class VoitureController : Controller
     {
         private readonly IVoitureService _voitureService;
