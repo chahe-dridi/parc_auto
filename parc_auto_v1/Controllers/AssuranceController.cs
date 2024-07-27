@@ -10,12 +10,12 @@ namespace parc_auto_v1.Controllers
     public class AssuranceController : Controller
     {
         private readonly IAssuranceService _assuranceService;
-        private readonly ApplicationDbContext _context;
+        private readonly IVoitureService _voitureService;
 
-        public AssuranceController(IAssuranceService assuranceService, ApplicationDbContext context)
+        public AssuranceController(IAssuranceService assuranceService, IVoitureService voitureService)
         {
             _assuranceService = assuranceService;
-            _context = context;
+            _voitureService = voitureService;
         }
 
         // GET: Assurance
@@ -42,19 +42,16 @@ namespace parc_auto_v1.Controllers
             return View(assurance);
         }
 
-
-
-        [HttpGet]
-        public IActionResult Create(int voitureId)
+        // GET: Assurance/Create/{voitureId}
+        public async Task<IActionResult> Create(int voitureId)
         {
             var model = new Assurance
             {
-                VoitureId = voitureId // Set the VoitureId in the model
+                VoitureId = voitureId
             };
 
-            // Set up the ViewBag to use in the dropdown if needed
-            ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", voitureId);
-
+            var voitures = await _voitureService.GetAllVoituresAsync();
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", voitureId);
             return View(model);
         }
 
@@ -63,14 +60,15 @@ namespace parc_auto_v1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DateEchance,DateValide,Alert,PrixUnitaire,VoitureId")] Assurance assurance)
         {
-          //  if (ModelState.IsValid)
+            //if (ModelState.IsValid)
             {
                 await _assuranceService.AddAssuranceAsync(assurance);
                 TempData["SuccessMessage"] = "Assurance has been created successfully!";
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", assurance.VoitureId);
+            var voitures = await _voitureService.GetAllVoituresAsync();
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", assurance.VoitureId);
             return View(assurance);
         }
 
@@ -88,7 +86,8 @@ namespace parc_auto_v1.Controllers
                 return NotFound();
             }
 
-            ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", assurance.VoitureId);
+            var voitures = await _voitureService.GetAllVoituresAsync();
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", assurance.VoitureId);
             return View(assurance);
         }
 
@@ -102,7 +101,7 @@ namespace parc_auto_v1.Controllers
                 return NotFound();
             }
 
-          //  if (ModelState.IsValid)
+            //if (ModelState.IsValid)
             {
                 try
                 {
@@ -122,9 +121,12 @@ namespace parc_auto_v1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["VoitureId"] = new SelectList(_context.Voitures, "Id", "Matricule", assurance.VoitureId);
+
+            var voitures = await _voitureService.GetAllVoituresAsync();
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", assurance.VoitureId);
             return View(assurance);
         }
+
         // GET: Assurance/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
