@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using parc_auto_v1.Services;
 
@@ -11,9 +12,11 @@ using parc_auto_v1.Services;
 namespace parc_auto_v1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240729110746_agen")]
+    partial class agen
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,19 +54,19 @@ namespace parc_auto_v1.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7ba2359d-fdea-4ab4-8674-fbd7377aaeab",
+                            Id = "115b538d-f3ef-4c7d-8a34-27b946dc2ae6",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "9b17ad74-c3ad-457f-9f4d-6bdc4cc8da4b",
+                            Id = "eaa8e2f0-57a5-4573-b920-bc8390f80c64",
                             Name = "utilisateur",
                             NormalizedName = "utilisateur"
                         },
                         new
                         {
-                            Id = "e3bc8525-8a07-49d6-b3a7-0fbf62a4e114",
+                            Id = "04e3d0e9-2fb3-400d-8ce8-0dcb44b4e081",
                             Name = "agent",
                             NormalizedName = "agent"
                         });

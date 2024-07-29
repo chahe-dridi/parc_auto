@@ -32,11 +32,13 @@ namespace parc_auto_v1.Services
             var admin = new IdentityRole("admin");
             admin.NormalizedName = "admin";
 
-            var client = new IdentityRole("client");
-            client.NormalizedName = "client";
+            var utilisateur = new IdentityRole("utilisateur");
+            utilisateur.NormalizedName = "utilisateur";
 
+            var agent = new IdentityRole("agent");
+            agent.NormalizedName = "agent";
 
-            modelBuilder.Entity<IdentityRole>().HasData(admin, client);
+            modelBuilder.Entity<IdentityRole>().HasData(admin, utilisateur, agent);
 
 
             modelBuilder.Entity<Voiture>()

@@ -74,7 +74,18 @@ namespace parc_auto_v1.Controllers
             return View(assurance);
         }
 
-        // GET: Assurance/Edit/5
+
+
+
+
+
+
+
+
+
+
+
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -89,12 +100,76 @@ namespace parc_auto_v1.Controllers
             }
 
             var voitures = await _voitureService.GetAllVoituresAsync();
-            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", assurance.VoitureId);
+            ViewBag.Voitures = voitures;
+
             return View(assurance);
         }
 
-        // POST: Assurance/Edit/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DateEchance,DateValide,Alert,PrixUnitaire,VoitureId")] Assurance assurance)
+        {
+            if (id != assurance.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _assuranceService.UpdateAssuranceAsync(assurance);
+                    TempData["SuccessMessage"] = "Assurance has been updated successfully!";
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!await _assuranceService.AssuranceExistsAsync(assurance.Id)) // Use the new method
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+
+            var voitures = await _voitureService.GetAllVoituresAsync();
+            ViewBag.Voitures = voitures;
+
+            return View(assurance);
+        }
+
+
+        private async Task<bool> AssuranceExists(int id)
+        {
+            var assurance = await _assuranceService.GetAssuranceByIdAsync(id);
+            return assurance != null;
+        }
+
+
+        // GET: Assurance/Edit/5
+        /* public async Task<IActionResult> Edit(int? id)
+         {
+             if (id == null)
+             {
+                 return NotFound();
+             }
+
+             var assurance = await _assuranceService.GetAssuranceByIdAsync(id.Value);
+             if (assurance == null)
+             {
+                 return NotFound();
+             }
+
+             var voitures = await _voitureService.GetAllVoituresAsync();
+             ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", assurance.VoitureId);
+             return View(assurance);
+         }*/
+
+        // POST: Assurance/Edit/5
+      /*  [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,DateEchance,DateValide,Alert,PrixUnitaire,VoitureId")] Assurance assurance)
         {
@@ -127,7 +202,7 @@ namespace parc_auto_v1.Controllers
             var voitures = await _voitureService.GetAllVoituresAsync();
             ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", assurance.VoitureId);
             return View(assurance);
-        }
+        }*/
 
         // GET: Assurance/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -156,10 +231,6 @@ namespace parc_auto_v1.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private async Task<bool> AssuranceExists(int id)
-        {
-            var assurance = await _assuranceService.GetAssuranceByIdAsync(id);
-            return assurance != null;
-        }
+       
     }
 }

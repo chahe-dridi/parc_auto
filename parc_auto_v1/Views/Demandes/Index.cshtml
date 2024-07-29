@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<parc_auto_v1.Models.Demandes>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Your Demands";
 }
 
-<h1>Demandes</h1>
+<h1>Your Demands</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New Request</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -36,20 +37,39 @@
                 <td>@Html.DisplayFor(modelItem => item.AffectationDepartement)</td>
                 <td>@Html.DisplayFor(modelItem => item.TypeVoiture)</td>
                 <td>@Html.DisplayFor(modelItem => item.Destination)</td>
-                <td>@Html.DisplayFor(modelItem => item.DateDepart)</td>
-                <td>@Html.DisplayFor(modelItem => item.DateArrivee)</td>
+                <td>@item.DateDepart.ToShortDateString()</td>
+                <td>@item.DateArrivee.ToShortDateString()</td>
                 <td>@Html.DisplayFor(modelItem => item.Mission)</td>
-                <td>@Html.DisplayFor(modelItem => item.Etat)</td>
                 <td>
-                    @(item.Voiture != null ? Html.DisplayFor(modelItem => item.Voiture.Matricule) : "En attente")
+                    @if (item.Etat == "Accepted")
+                    {
+                        <span class="badge bg-success">Accepted</span>
+                    }
+                    else if (item.Etat == "Refused")
+                    {
+                        <span class="badge bg-danger">Refused</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    }
                 </td>
                 <td>
-                    @if (item.Etat != "Accepted" && item.Etat != "Refused")
+                    @if (item.Etat == "Refused")
                     {
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                        <span class="badge bg-danger ">Refused</span>
                     }
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+                    else if (item.Voiture != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Voiture.Matricule)
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning  text-dark">Not Assigned</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
                 </td>
             </tr>
         }

@@ -71,6 +71,23 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
 
         // GET: Voiture/Edit/5
         // GET: Voiture/Edit/5
+        /*  public async Task<IActionResult> Edit(int? id)
+          {
+              if (id == null)
+              {
+                  return NotFound();
+              }
+
+              var voiture = await _voitureService.GetVoitureByIdAsync(id.Value);
+              if (voiture == null)
+              {
+                  return NotFound();
+              }
+
+              ViewBag.Marques = await _marqueService.GetAllMarquesAsync();
+              ViewBag.Modeles = await _modeleService.GetModelesByMarqueIdAsync(voiture.MarqueId); // Load modeles based on MarqueId
+              return View(voiture);
+          }*/
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -187,7 +204,6 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
             var filteredModeles = modeles.Where(m => m.MarqueId == marqueId).ToList();
             return Json(filteredModeles);
         }
-
 
 
 

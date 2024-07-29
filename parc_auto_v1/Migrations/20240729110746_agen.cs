@@ -7,7 +7,7 @@
 namespace parc_auto_v1.Migrations
 {
     /// <inheritdoc />
-    public partial class tet : Migration
+    public partial class agen : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -63,8 +63,9 @@ namespace parc_auto_v1.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "6f4fdb10-76a9-4f7c-ab75-d1168b872840", null, "client", "client" },
-                    { "e251de10-21dd-4204-8c73-d8e45086fb2c", null, "admin", "admin" }
+                    { "04e3d0e9-2fb3-400d-8ce8-0dcb44b4e081", null, "agent", "agent" },
+                    { "115b538d-f3ef-4c7d-8a34-27b946dc2ae6", null, "admin", "admin" },
+                    { "eaa8e2f0-57a5-4573-b920-bc8390f80c64", null, "utilisateur", "utilisateur" }
                 });
         }
 
@@ -74,12 +75,17 @@ namespace parc_auto_v1.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "6f4fdb10-76a9-4f7c-ab75-d1168b872840");
+                keyValue: "04e3d0e9-2fb3-400d-8ce8-0dcb44b4e081");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "e251de10-21dd-4204-8c73-d8e45086fb2c");
+                keyValue: "115b538d-f3ef-4c7d-8a34-27b946dc2ae6");
+
+            migrationBuilder.DeleteData(
+                table: "AspNetRoles",
+                keyColumn: "Id",
+                keyValue: "eaa8e2f0-57a5-4573-b920-bc8390f80c64");
 
             migrationBuilder.AlterColumn<string>(
                 name: "Name",

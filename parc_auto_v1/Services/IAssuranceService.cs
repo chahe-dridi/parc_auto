@@ -11,5 +11,6 @@ namespace parc_auto_v1.Services
         Task AddAssuranceAsync(Assurance assurance);
         Task UpdateAssuranceAsync(Assurance assurance);
         Task DeleteAssuranceAsync(int id);
+        Task<bool> AssuranceExistsAsync(int id); // Add this method
     }
 }

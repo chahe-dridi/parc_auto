@@ -23,5 +23,4 @@ namespace parc_auto_v1.Models
         public int VoitureId { get; set; }
         public Voiture Voiture { get; set; }
     }
-
 }

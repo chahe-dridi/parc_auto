@@ -28,6 +28,23 @@ namespace parc_auto_v1.Controllers
         }
 
         // GET: Vignette/Details/5
+      /*  public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var vignette = await _vignetteService.GetVignetteByIdAsync(id.Value);
+            if (vignette == null)
+            {
+                return NotFound();
+            }
+
+            return View(vignette);
+        }
+      */
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,9 +59,15 @@ namespace parc_auto_v1.Controllers
             }
 
             return View(vignette);
-
-
         }
+
+
+      
+
+
+
+
+
 
         // GET: Vignette/Create
         [HttpGet]

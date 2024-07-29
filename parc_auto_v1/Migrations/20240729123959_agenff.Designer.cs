@@ -12,8 +12,8 @@ using parc_auto_v1.Services;
 namespace parc_auto_v1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240727135542_tet")]
-    partial class tet
+    [Migration("20240729123959_agenff")]
+    partial class agenff
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,15 +54,21 @@ namespace parc_auto_v1.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e251de10-21dd-4204-8c73-d8e45086fb2c",
+                            Id = "7ba2359d-fdea-4ab4-8674-fbd7377aaeab",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "6f4fdb10-76a9-4f7c-ab75-d1168b872840",
-                            Name = "client",
-                            NormalizedName = "client"
+                            Id = "9b17ad74-c3ad-457f-9f4d-6bdc4cc8da4b",
+                            Name = "utilisateur",
+                            NormalizedName = "utilisateur"
+                        },
+                        new
+                        {
+                            Id = "e3bc8525-8a07-49d6-b3a7-0fbf62a4e114",
+                            Name = "agent",
+                            NormalizedName = "agent"
                         });
                 });
 

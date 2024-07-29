@@ -41,29 +41,65 @@
         <dd class="col-sm-10">@Model.Mission</dd>
 
         <dt class="col-sm-2">Etat</dt>
-        <dd class="col-sm-10">@Model.Etat</dd>
+        <dd class="col-sm-10">
+            @if (Model.Etat == "Accepted")
+            {
+                <span class="badge bg-success">Accepted</span>
+            }
+            else if (Model.Etat == "Refused")
+            {
+                <span class="badge bg-danger">Refused</span>
+            }
+            else
+            {
+                <span class="badge bg-warning text-dark">Pending</span>
+            }
+        </dd>
 
         <dt class="col-sm-2">Matricule</dt>
-        <dd class="col-sm-10">@Model.Voiture?.Matricule</dd>
+        <dd class="col-sm-10">
+            @if (Model.Etat == "Refused")
+            {
+                <span class="text-danger">Refused</span>
+            }
+            else if (Model.Voiture != null)
+            {
+                @Model.Voiture.Matricule
+            }
+            else
+            {
+                <span class="text-muted">Not Assigned</span>
+            }
+        </dd>
     </dl>
 </div>
 
 @if (Model.Etat != "Accepted" && Model.Etat != "Refused")
 {
     <div>
-        <h4>Accept Demande</h4>
+        <h4>Accept or Refuse Demande</h4>
         <form asp-action="ConfirmAcceptance" method="post">
             <input type="hidden" name="id" value="@Model.Id" />
 
             <div class="form-group">
                 <label for="voitureId">Select a Car:</label>
-                <select name="voitureId" class="form-control">
+                <select name="voitureId" id="voitureId" class="form-control">
                     <option value="">-- Select a Car --</option>
                     @foreach (var voiture in ViewBag.AvailableVoitures)
                     {
-                        <option value="@voiture.Id">@voiture.Marque @voiture.Modele</option>
+                        <option value="@voiture.Id">
+                            @if (voiture.Marque != null && voiture.Modele != null)
+                            {
+                                @voiture.Marque.Nom @voiture.Modele.Nom
+                            }
+                            else
+                            {
+                                @voiture.Matricule
+                            }
+                        </option>
                     }
                 </select>
+
             </div>
 
             <button type="submit" name="action" value="Accept" class="btn btn-success">Accept</button>
@@ -75,5 +111,8 @@
 <div>
     <a asp-action="Index" class="btn btn-primary">Back to List</a>
     <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
-    <a asp-action="DownloadPdf" asp-route-id="@Model.Id" class="btn btn-info">Download PDF</a>
+    @if (Model.Voiture != null)
+    {
+        <a asp-action="DownloadPdf" asp-route-id="@Model.Id" class="btn btn-info">Download PDF</a>
+    }
 </div>

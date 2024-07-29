@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace parc_auto_v1.Controllers
 {
-    [Authorize(Roles = "client,admin")]
+    [Authorize(Roles = "admin")]
     
     public class DemandesController : Controller
     {

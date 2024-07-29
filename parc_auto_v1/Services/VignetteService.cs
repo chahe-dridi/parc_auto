@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
+using parc_auto_v1.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using parc_auto_v1.Services;
+
 public class VignetteService : IVignetteService
 {
     private readonly ApplicationDbContext _context;

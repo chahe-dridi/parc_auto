@@ -22,8 +22,8 @@
             <div class="form-group">
                 <label asp-for="TypeVoiture" class="control-label"></label>
                 <select asp-for="TypeVoiture" class="form-control">
-                    <option value="4 places">4 places</option>
-                    <option value="utilities">Utilities</option>
+                    <option value="4 places" selected="@(Model.TypeVoiture == "4 places" ? "selected" : "")">4 places</option>
+                    <option value="utilities" selected="@(Model.TypeVoiture == "utilities" ? "selected" : "")">Utilities</option>
                 </select>
                 <span asp-validation-for="TypeVoiture" class="text-danger"></span>
             </div>
@@ -34,7 +34,7 @@
                     <option value="">-- Select Marque --</option>
                     @foreach (var marque in ViewBag.Marques)
                     {
-                        <option value="@marque.Id">@marque.Nom</option>
+                        <option value="@marque.Id" selected="@(marque.Id == Model.MarqueId ? "selected" : "")">@marque.Nom</option>
                     }
                 </select>
                 <button type="button" class="btn btn-primary" id="addMarque">Add Marque</button>
@@ -60,8 +60,8 @@
             <div class="form-group">
                 <label asp-for="Carburant" class="control-label"></label>
                 <select asp-for="Carburant" class="form-control">
-                    <option value="Essence">Essence</option>
-                    <option value="Gazol">Gazol</option>
+                    <option value="Essence" selected="@(Model.Carburant == "Essence" ? "selected" : "")">Essence</option>
+                    <option value="Gazol" selected="@(Model.Carburant == "Gazol" ? "selected" : "")">Gazol</option>
                 </select>
                 <span asp-validation-for="Carburant" class="text-danger"></span>
             </div>
@@ -75,10 +75,10 @@
             <div class="form-group">
                 <label asp-for="Disponibilite" class="control-label"></label>
                 <select asp-for="Disponibilite" class="form-control">
-                    <option value="Pre Reserved">Pre Reserved</option>
-                    <option value="Reserved">Reserved</option>
-                    <option value="Disponible">Disponible</option>
-                    <option value="En Arrivage">En Arrivage</option>
+                    <option value="Pre Reserved" selected="@(Model.Disponibilite == "Pre Reserved" ? "selected" : "")">Pre Reserved</option>
+                    <option value="Reserved" selected="@(Model.Disponibilite == "Reserved" ? "selected" : "")">Reserved</option>
+                    <option value="Disponible" selected="@(Model.Disponibilite == "Disponible" ? "selected" : "")">Disponible</option>
+                    <option value="En Arrivage" selected="@(Model.Disponibilite == "En Arrivage" ? "selected" : "")">En Arrivage</option>
                 </select>
                 <span asp-validation-for="Disponibilite" class="text-danger"></span>
             </div>
@@ -109,11 +109,20 @@
                         $.each(data, function (i, modele) {
                             $modeleSelect.append('<option value="' + modele.id + '">' + modele.nom + '</option>');
                         });
+
+                        // Set selected Modele
+                        var selectedModeleId = '@Model.ModeleId';
+                        if (selectedModeleId) {
+                            $modeleSelect.val(selectedModeleId);
+                        }
                     });
                 } else {
                     $('#modele-select').empty().append('<option value="">-- Select Modele --</option>');
                 }
             });
+
+            // Trigger change event on page load to populate Modele options based on existing Marque
+            $('#marque-select').trigger('change');
 
             // Add new Marque
             $('#addMarque').click(function () {

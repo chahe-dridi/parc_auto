@@ -8,7 +8,7 @@
 
 <h4>Demandes</h4>
 <hr />
-@if (Model.Etat != "Accepted")
+@if (Model.Etat != "Accepted" && Model.Etat != "Refused")
 {
     <div class="row">
         <div class="col-md-4">
@@ -75,7 +75,18 @@
 }
 else
 {
-    <p>This demande is accepted and cannot be edited.</p>
+
+
+                @if (Model.Etat == "Accepted")
+                {
+                    <p>This demande is accepted and cannot be edited.</p>
+                }
+          
+                else
+                    {
+                                 <p> This demande is Refused and cannot be edited.</p>
+                    }
+           
 }
 <div>
     <a asp-action="Index">Back to List</a>

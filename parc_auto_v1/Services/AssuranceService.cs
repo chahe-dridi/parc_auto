@@ -16,12 +16,16 @@ namespace parc_auto_v1.Services
 
         public async Task<List<Assurance>> GetAllAssurancesAsync()
         {
-            return await _context.Assurances.ToListAsync();
+            return await _context.Assurances
+                                 .Include(a => a.Voiture) // Eager load the Voiture entity
+                                 .ToListAsync();
         }
 
         public async Task<Assurance> GetAssuranceByIdAsync(int id)
         {
-            return await _context.Assurances.FindAsync(id);
+            return await _context.Assurances
+                                 .Include(a => a.Voiture) // Eager load the Voiture entity
+                                 .FirstOrDefaultAsync(a => a.Id == id);
         }
 
         public async Task AddAssuranceAsync(Assurance assurance)
@@ -44,6 +48,11 @@ namespace parc_auto_v1.Services
                 _context.Assurances.Remove(assurance);
                 await _context.SaveChangesAsync();
             }
+        }
+
+        public async Task<bool> AssuranceExistsAsync(int id) // Implement this method
+        {
+            return await _context.Assurances.AnyAsync(a => a.Id == id);
         }
     }
 }

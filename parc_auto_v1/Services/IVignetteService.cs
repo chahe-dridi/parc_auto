@@ -10,4 +10,7 @@ public interface IVignetteService
     Task UpdateVignetteAsync(Vignette vignette);
     Task DeleteVignetteAsync(int id);
     Task<bool> VignetteExistsAsync(int id);
+
+
+ 
 }
