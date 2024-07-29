@@ -60,13 +60,18 @@
                                     <a class="nav-link text-dark" asp-area="" asp-controller="DemandesAdmin" asp-action="Index">Demandes Admin</a>
                                 </li>
                             }
-                            @if (await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "client"))
+                            @if (await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "utilisateur"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Demandes" asp-action="Index">Demandes</a>
                                 </li>
                             }
-                            
+                            @if (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "agent"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Agent" asp-action="Index">Agent</a>
+                                </li>
+                            }
 
                             
                         }
