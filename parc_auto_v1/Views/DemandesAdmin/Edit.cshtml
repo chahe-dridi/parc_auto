@@ -86,8 +86,15 @@
             <option value="">-- Select a Car --</option>
             @foreach (var voiture in ViewBag.AvailableVoitures)
             {
-                <option value="@voiture.Id" selected="@(Model.VoitureId == voiture.Id ? "selected" : "")">
-                    @voiture.Marque @voiture.Modele
+                <option value="@voiture.Id">
+                    @if (voiture.Marque != null && voiture.Modele != null)
+                    {
+                        @voiture.Marque.Nom @voiture.Modele.Nom
+                    }
+                    else
+                    {
+                        @voiture.Matricule
+                    }
                 </option>
             }
         </select>

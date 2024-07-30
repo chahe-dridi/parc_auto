@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Sinistre\" />
+    <Folder Include="wwwroot\rss\" />
   </ItemGroup>
 
 </Project>

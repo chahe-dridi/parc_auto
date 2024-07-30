@@ -47,15 +47,7 @@ namespace parc_auto_v1.Services
 
 
 
-      /*  public async Task<List<Voiture>> GetAllVoituresAsync()
-        {
-            return await _context.Voitures.ToListAsync();
-        }
-
-        public async Task<Voiture> GetVoitureByIdAsync(int id)
-        {
-            return await _context.Voitures.FindAsync(id);
-        } */
+       
 
         public async Task AddVoitureAsync(Voiture voiture)
         {

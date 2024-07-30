@@ -249,6 +249,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\lib\\jquery\\dist\\jqueryy.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jqueryy.min.js"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.parc_auto_v1.props",
       "PackagePath": "build\\parc_auto_v1.props"
     },

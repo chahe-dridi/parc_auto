@@ -17,18 +17,21 @@
     <tbody>
         @foreach (var voiture in Model)
         {
-            <tr>
-                <td>@voiture.Matricule</td>
-                <td>@voiture.Disponibilite</td>
-                <td>
-                    @if (voiture.Disponibilite != "Disponible")
-                    {
-                        <form asp-action="ChangeDisponibilite" method="post" asp-route-id="@voiture.Id">
-                            <button type="submit" class="btn btn-primary">Rendre Disponible</button>
-                        </form>
-                    }
-                </td>
-            </tr>
+            @if (voiture.Disponibilite == "Reserved")
+            {
+                <tr>
+                    <td>@voiture.Matricule</td>
+                    <td>@voiture.Disponibilite</td>
+                    <td>
+                        @if (voiture.Disponibilite == "Reserved")
+                        {
+                            <form asp-action="ChangeDisponibilite" method="post" asp-route-id="@voiture.Id">
+                                <button type="submit" class="btn btn-primary">Rendre Disponible</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>

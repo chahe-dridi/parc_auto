@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4gem27RLR3rmr0ky2nt5ATsr+ZC0It3QlPlFV2cP/68=",
+  "Hash": "BsY3lJRSM4IEJplPSQRNJTaiU8ILirEeY7XbKb3btlc=",
   "Source": "parc_auto_v1",
   "BasePath": "_content/parc_auto_v1",
   "Mode": "Default",
@@ -2181,6 +2181,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Identity": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\lib\\jquery\\dist\\jqueryy.min.js",
+      "SourceId": "parc_auto_v1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\",
+      "BasePath": "_content/parc_auto_v1",
+      "RelativePath": "lib/jquery/dist/jqueryy.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jqueryy.min.js"
     },
     {
       "Identity": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\lib\\jquery\\LICENSE.txt",
