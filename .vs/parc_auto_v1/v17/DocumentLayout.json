@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|c:\\users\\dark\\desktop\\.net\\parc_auto_v1\\parc_auto_v1\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|solutionrelative:parc_auto_v1\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|c:\\users\\dark\\desktop\\.net\\parc_auto_v1\\parc_auto_v1\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|solutionrelative:parc_auto_v1\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|c:\\users\\dark\\desktop\\.net\\parc_auto_v1\\parc_auto_v1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B577EDAD-A6BD-40CE-99C0-9C8A4567C346}|parc_auto_v1\\parc_auto_v1.csproj|solutionrelative:parc_auto_v1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -131,7 +139,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -143,7 +151,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "parc_auto_v1\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AQIAAJoAAAAAAAAAAAAYwKwAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T10:34:28.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "parc_auto_v1\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB4AAABgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T10:34:16.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Voiture\\Details.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\Voiture\\Details.cshtml",
@@ -151,12 +185,11 @@
               "RelativeToolTip": "parc_auto_v1\\Views\\Voiture\\Details.cshtml",
               "ViewState": "AQIAAIoAAAAAAAAAAAAAAAsAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T10:19:05.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T10:19:05.26Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Voiture\\Delete.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\Voiture\\Delete.cshtml",
@@ -164,12 +197,11 @@
               "RelativeToolTip": "parc_auto_v1\\Views\\Voiture\\Delete.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T10:19:04.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T10:19:04.472Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Demandes.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Models\\Demandes.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Models\\Demandes.cs",
@@ -177,12 +209,11 @@
               "RelativeToolTip": "parc_auto_v1\\Models\\Demandes.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T09:55:57.083Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T09:55:57.083Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\DemandesAdmin\\Edit.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\DemandesAdmin\\Edit.cshtml",
@@ -190,12 +221,11 @@
               "RelativeToolTip": "parc_auto_v1\\Views\\DemandesAdmin\\Edit.cshtml",
               "ViewState": "AQIAADkAAAAAAAAAAAAAAGIAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-29T22:56:33.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T22:56:33.233Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "AgentController.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\AgentController.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Controllers\\AgentController.cs",
@@ -203,12 +233,11 @@
               "RelativeToolTip": "parc_auto_v1\\Controllers\\AgentController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T21:41:01.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T21:41:01.568Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\DemandesAdmin\\Index.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\DemandesAdmin\\Index.cshtml",
@@ -216,35 +245,33 @@
               "RelativeToolTip": "parc_auto_v1\\Views\\DemandesAdmin\\Index.cshtml",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAAB8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T08:07:00.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T08:07:00.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "dbo.AspNetUserRoles [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/localhost_sqlexpress/parc_auto/True/SqlTable/dbo.AspNetUserRoles.sql",
               "ToolTip": "dbo.AspNetUserRoles [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-07-29T21:36:22.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T21:36:22.243Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "parc_auto_v1\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEcAAAB9AAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAAsAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-29T21:38:06.416Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "AssuranceController.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\AssuranceController.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Controllers\\AssuranceController.cs",
@@ -252,12 +279,11 @@
               "RelativeToolTip": "parc_auto_v1\\Controllers\\AssuranceController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T21:41:05.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T21:41:05.571Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "jqueryy.min.js",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\lib\\jquery\\dist\\jqueryy.min.js",
               "RelativeDocumentMoniker": "parc_auto_v1\\wwwroot\\lib\\jquery\\dist\\jqueryy.min.js",
@@ -265,12 +291,11 @@
               "RelativeToolTip": "parc_auto_v1\\wwwroot\\lib\\jquery\\dist\\jqueryy.min.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-30T07:25:55.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T07:25:55.937Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Voiture\\Edit.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\Voiture\\Edit.cshtml",
@@ -278,12 +303,11 @@
               "RelativeToolTip": "parc_auto_v1\\Views\\Voiture\\Edit.cshtml",
               "ViewState": "AQIAAD8AAAAAAAAAAAAkwFoAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-29T22:41:42.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T22:41:42.789Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\DemandesAdmin\\Details.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\DemandesAdmin\\Details.cshtml",
@@ -291,12 +315,11 @@
               "RelativeToolTip": "parc_auto_v1\\Views\\DemandesAdmin\\Details.cshtml",
               "ViewState": "AQIAADsAAAAAAAAAAAAkwFkAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-29T22:36:44.573Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T22:36:44.573Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "DemandesController.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\DemandesController.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Controllers\\DemandesController.cs",
@@ -304,12 +327,11 @@
               "RelativeToolTip": "parc_auto_v1\\Controllers\\DemandesController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T21:35:38.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T21:35:38.325Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Voiture\\Create.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\Voiture\\Create.cshtml",
@@ -317,12 +339,11 @@
               "RelativeToolTip": "parc_auto_v1\\Views\\Voiture\\Create.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T08:06:49.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T08:06:49.916Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "DemandesAdminController.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\DemandesAdminController.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Controllers\\DemandesAdminController.cs",
@@ -330,12 +351,11 @@
               "RelativeToolTip": "parc_auto_v1\\Controllers\\DemandesAdminController.cs",
               "ViewState": "AQIAAMQAAAAAAAAAAAAAAAkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T22:34:39.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T22:34:39.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "VoitureController.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\VoitureController.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Controllers\\VoitureController.cs",
@@ -343,12 +363,11 @@
               "RelativeToolTip": "parc_auto_v1\\Controllers\\VoitureController.cs",
               "ViewState": "AQIAAJIAAAAAAAAAAAAkwKoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T23:03:40.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T23:03:40.2Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Voiture .cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Models\\Voiture .cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Models\\Voiture .cs",
@@ -356,38 +375,35 @@
               "RelativeToolTip": "parc_auto_v1\\Models\\Voiture .cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T21:47:27.899Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "VoitureService.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\VoitureService.cs",
-              "RelativeDocumentMoniker": "parc_auto_v1\\Services\\VoitureService.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\VoitureService.cs*",
-              "RelativeToolTip": "parc_auto_v1\\Services\\VoitureService.cs*",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAwCwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T21:47:18.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IVoitureService.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\IVoitureService.cs",
-              "RelativeDocumentMoniker": "parc_auto_v1\\Services\\IVoitureService.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\IVoitureService.cs*",
-              "RelativeToolTip": "parc_auto_v1\\Services\\IVoitureService.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T22:09:51.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T21:47:27.899Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
+              "Title": "VoitureService.cs",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\VoitureService.cs",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Services\\VoitureService.cs",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\VoitureService.cs",
+              "RelativeToolTip": "parc_auto_v1\\Services\\VoitureService.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAwCwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T21:47:18.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IVoitureService.cs",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\IVoitureService.cs",
+              "RelativeDocumentMoniker": "parc_auto_v1\\Services\\IVoitureService.cs",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\IVoitureService.cs",
+              "RelativeToolTip": "parc_auto_v1\\Services\\IVoitureService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T22:09:51.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "index.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Agent\\index.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\Agent\\index.cshtml",
@@ -395,12 +411,11 @@
               "RelativeToolTip": "parc_auto_v1\\Views\\Agent\\index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-29T21:40:22.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T21:40:22.499Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "VidangeController.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\VidangeController.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Controllers\\VidangeController.cs",
@@ -412,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "SinistreController.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\SinistreController.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Controllers\\SinistreController.cs",
@@ -424,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "IDemandesService.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\IDemandesService.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Services\\IDemandesService.cs",
@@ -436,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "DemandesService.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Services\\DemandesService.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Services\\DemandesService.cs",
@@ -448,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "jqueryy.min.js",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\lib\\jquery\\dist\\jqueryy.min.js",
               "RelativeDocumentMoniker": "parc_auto_v1\\wwwroot\\lib\\jquery\\dist\\jqueryy.min.js",
@@ -460,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "VignetteController.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\VignetteController.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Controllers\\VignetteController.cs",
@@ -472,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "VisiteTechniqueController.cs",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Controllers\\VisiteTechniqueController.cs",
               "RelativeDocumentMoniker": "parc_auto_v1\\Controllers\\VisiteTechniqueController.cs",
@@ -484,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\Home\\Index.cshtml",
@@ -496,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "parc_auto_v1\\Views\\Home\\Privacy.cshtml",
@@ -508,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "dbo.AspNetRoles [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/localhost_sqlexpress/parc_auto/True/SqlTable/dbo.AspNetRoles.sql",
               "ToolTip": "dbo.AspNetRoles [Data]",
@@ -517,7 +532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "dbo.AspNetUsers [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/localhost_sqlexpress/parc_auto/True/SqlTable/dbo.AspNetUsers.sql",
               "ToolTip": "dbo.AspNetUsers [Data]",
