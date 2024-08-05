@@ -78,9 +78,8 @@
         }
 
         <div class="row mb-4">
-          
-            <div class="col-md-8">
-                <form class="form-inline float-right" asp-controller="Demandes" asp-action="Index">
+            <div class="col-md-6">
+                <form class="form-inline" asp-controller="DemandesAdmin" asp-action="Index">
                     <div class="input-group">
                         <input type="text" class="form-control" name="searchString" placeholder="Search by Employee ID..." value="@ViewData["CurrentFilter"]">
                         <div class="input-group-append">
@@ -89,7 +88,19 @@
                     </div>
                 </form>
             </div>
+            <div class="col-md-6">
+                <form class="form-inline" asp-controller="DemandesAdmin" asp-action="Index">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="searchMatricule" placeholder="Search by Car Matricule..." value="@ViewData["CurrentFilterMatricule"]">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
+
+        <a asp-action="DownloadAllPdf" class="btn btn-primary mb-4">Download PDF</a>
 
         <table class="table table-bordered table-hover table-custom">
             <thead class="thead-dark">
@@ -158,15 +169,6 @@
                 }
             </tbody>
         </table>
-
-
-
-
-
-
     </div>
-
-
-
 </body>
 </html>

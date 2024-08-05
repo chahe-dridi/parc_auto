@@ -11,5 +11,9 @@ namespace parc_auto_v1.Services
         Task AddDemandeAsync(Demandes demande);
         Task UpdateDemandeAsync(Demandes demande);
         Task DeleteDemandeAsync(int id);
+
+
+
+
     }
 }
