@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
@@ -7,6 +12,10 @@ using System.Threading.Tasks;
 
 namespace parc_auto_v1.Controllers
 {
+<<<<<<< HEAD
+=======
+    [Authorize(Roles = "admin")]
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
     public class VignetteController : Controller
     {
         private readonly IVignetteService _vignetteService;
@@ -26,6 +35,26 @@ namespace parc_auto_v1.Controllers
         }
 
         // GET: Vignette/Details/5
+<<<<<<< HEAD
+=======
+      /*  public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var vignette = await _vignetteService.GetVignetteByIdAsync(id.Value);
+            if (vignette == null)
+            {
+                return NotFound();
+            }
+
+            return View(vignette);
+        }
+      */
+
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -40,10 +69,23 @@ namespace parc_auto_v1.Controllers
             }
 
             return View(vignette);
+<<<<<<< HEAD
 
 
         }
 
+=======
+        }
+
+
+      
+
+
+
+
+
+
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
         // GET: Vignette/Create
         [HttpGet]
         public async Task<IActionResult> Create(int? voitureId)

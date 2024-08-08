@@ -34,7 +34,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="VoitureId" class="control-label"></label>
+<<<<<<< HEAD
                 <select asp-for="VoitureId" class="form-control" asp-items="@ViewBag.Voitures"></select>
+=======
+                <select asp-for="VoitureId" class="form-control" asp-items="@(new SelectList(ViewBag.Voitures, "Id", "Matricule"))"></select>
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
                 <span asp-validation-for="VoitureId" class="text-danger"></span>
             </div>
             <div class="form-group">

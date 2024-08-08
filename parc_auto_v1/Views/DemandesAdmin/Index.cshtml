@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<parc_auto_v1.Models.Demandes>
 
+<<<<<<< HEAD
 <h1>All Demandes</h1>
 
 <table class="table">
@@ -48,3 +49,177 @@
         }
     </tbody>
 </table>
+=======
+@{
+    ViewData["Title"] = "All Demandes";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #e9ecef;
+        }
+
+        .container-custom {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-custom thead {
+            background: #343a40;
+            color: #fff;
+        }
+
+        .table-custom tbody tr:hover {
+            background: #f1f1f1;
+        }
+
+        .btn-custom {
+            border-radius: 50px;
+            padding: 5px 15px;
+        }
+
+        .form-inline .input-group {
+            width: 100%;
+        }
+
+        .form-inline .form-control {
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+        .form-inline .btn-outline-secondary {
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin: 2px;
+        }
+
+        .alert {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 container-custom">
+        <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+        }
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+        }
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <form class="form-inline" asp-controller="DemandesAdmin" asp-action="Index">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="searchString" placeholder="Search by Employee ID..." value="@ViewData["CurrentFilter"]">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form class="form-inline" asp-controller="DemandesAdmin" asp-action="Index">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="searchMatricule" placeholder="Search by Car Matricule..." value="@ViewData["CurrentFilterMatricule"]">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <a asp-action="DownloadAllPdf" class="btn btn-primary mb-4">Download PDF</a>
+
+        <table class="table table-bordered table-hover table-custom">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Id Employe</th>
+                    <th>Affectation Departement</th>
+                    <th>Type Voiture</th>
+                    <th>Destination</th>
+                    <th>Date Depart</th>
+                    <th>Date Arrivee</th>
+                    <th>Description</th>
+                    <th>Mission</th>
+                    <th>Etat</th>
+                    <th>Matricule</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var demande in Model)
+                {
+                    <tr>
+                        <td>@demande.Nom</td>
+                        <td>@demande.Prenom</td>
+                        <td>@demande.IdEmploye</td>
+                        <td>@demande.AffectationDepartement</td>
+                        <td>@demande.TypeVoiture</td>
+                        <td>@demande.Destination</td>
+                        <td>@demande.DateDepart.ToShortDateString()</td>
+                        <td>@demande.DateArrivee.ToShortDateString()</td>
+                        <td>@demande.Description</td>
+                        <td>@demande.Mission</td>
+                        <td>
+                            @if (demande.Etat == "Accepted")
+                            {
+                                <span class="badge badge-success">Accepted</span>
+                            }
+                            else if (demande.Etat == "Refused")
+                            {
+                                <span class="badge badge-danger">Refused</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-warning">Pending</span>
+                            }
+                        </td>
+                        <td>
+                            @if (demande.Etat == "Refused")
+                            {
+                                <span class="text-danger">Refused</span>
+                            }
+                            else if (demande.Voiture != null)
+                            {
+                                @demande.Voiture.Matricule
+                            }
+                            else
+                            {
+                                <span class="text-muted">Not Assigned</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@demande.Id" class="btn btn-primary btn-sm btn-custom">View</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84

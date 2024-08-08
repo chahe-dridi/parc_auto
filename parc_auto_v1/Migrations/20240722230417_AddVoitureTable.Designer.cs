@@ -5,7 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+<<<<<<< HEAD
 
+=======
+using parc_auto_v1.Services;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
 #nullable disable
 
 namespace parc_auto_v1.Migrations

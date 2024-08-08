@@ -9,11 +9,20 @@ using System.Threading.Tasks;
 using PdfSharpCore.Drawing;
 using PdfSharpCore.Pdf;
 using Microsoft.AspNetCore.Hosting;
+<<<<<<< HEAD
+=======
+using Microsoft.AspNetCore.Authorization;
+using PdfSharpCore.Drawing.Layout;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
 
 
 
 namespace parc_auto_v1.Controllers
 {
+<<<<<<< HEAD
+=======
+    [Authorize(Roles = "admin")]
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
     public class DemandesAdminController : Controller
     {
         private readonly IDemandesService _demandesService;
@@ -152,6 +161,7 @@ namespace parc_auto_v1.Controllers
 
 
 
+<<<<<<< HEAD
 
         //perfect wihtout photo
         /* public async Task<IActionResult> DownloadPdf(int id)
@@ -233,6 +243,9 @@ namespace parc_auto_v1.Controllers
           }
         */
        
+=======
+ 
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
 
 
         public async Task<IActionResult> DownloadPdf(int id)
@@ -329,6 +342,295 @@ namespace parc_auto_v1.Controllers
             }
         }
 
+<<<<<<< HEAD
+=======
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var demande = await _demandesService.GetDemandeByIdAsync(id);
+            if (demande == null)
+            {
+                return NotFound();
+            }
+
+            await _demandesService.DeleteDemandeAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
+
+
+        /*
+        public async Task<IActionResult> DownloadAllPdf(string searchString, string searchMatricule)
+        {
+            var demandes = await _demandesService.GetAllDemandesAsync();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                demandes = demandes.Where(d => d.IdEmploye.Contains(searchString)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(searchMatricule))
+            {
+                demandes = demandes.Where(d => d.Voiture != null && d.Voiture.Matricule.Contains(searchMatricule)).ToList();
+            }
+
+            using (var stream = new MemoryStream())
+            {
+                var document = new PdfDocument();
+                var page = document.AddPage();
+                var gfx = XGraphics.FromPdfPage(page);
+                var font = new XFont("Arial", 12);
+
+                int yPoint = 0;
+
+                foreach (var demande in demandes)
+                {
+                    gfx.DrawString($"Nom: {demande.Nom}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Prenom: {demande.Prenom}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Id Employe: {demande.IdEmploye}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Affectation Departement: {demande.AffectationDepartement}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Type Voiture: {demande.TypeVoiture}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Destination: {demande.Destination}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Date Depart: {demande.DateDepart.ToShortDateString()}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Date Arrivee: {demande.DateArrivee.ToShortDateString()}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Description: {demande.Description}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Mission: {demande.Mission}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Etat: {demande.Etat}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    gfx.DrawString($"Matricule: {(demande.Voiture != null ? demande.Voiture.Matricule : "Not Assigned")}", font, XBrushes.Black, new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopLeft);
+                    yPoint += 15;
+                    yPoint += 20; // Add extra space between demandes
+                }
+
+                document.Save(stream, false);
+
+                return File(stream.ToArray(), "application/pdf", "Demandes.pdf");
+            }
+        }*/
+
+
+
+
+
+
+         public async Task<IActionResult> DownloadAllPdf(string searchString, string searchMatricule)
+         {
+             var demandes = await _demandesService.GetAllDemandesAsync();
+
+             if (!string.IsNullOrEmpty(searchString))
+             {
+                 demandes = demandes.Where(d => d.IdEmploye.Contains(searchString)).ToList();
+             }
+
+             if (!string.IsNullOrEmpty(searchMatricule))
+             {
+                 demandes = demandes.Where(d => d.Voiture != null && d.Voiture.Matricule.Contains(searchMatricule)).ToList();
+             }
+
+             using (var stream = new MemoryStream())
+             {
+                 var document = new PdfDocument();
+                 var page = document.AddPage();
+                 var gfx = XGraphics.FromPdfPage(page);
+                 var font = new XFont("Arial", 10);
+                 var boldFont = new XFont("Arial", 10, XFontStyle.Bold);
+                 var margin = 40;
+                 var pageWidth = page.Width - 2 * margin;
+                 var rowHeight = 30;
+                 var headerHeight = rowHeight;
+
+                 // Title
+                 gfx.DrawString("Demandes Report", boldFont, XBrushes.Black, new XRect(margin, margin, pageWidth, headerHeight), XStringFormats.TopLeft);
+                 var yPos = margin + headerHeight + 10;
+
+                 // Table headers
+                 var columnHeaders = new[] {
+             "Nom", "Prenom", "Id Employe", "Affectation Departement", "Type Voiture",
+             "Destination", "Date Depart", "Date Arrivee", "Description", "Mission", "Etat", "Matricule"
+         };
+
+                 var columnWidth = pageWidth / columnHeaders.Length;
+                 gfx.DrawRectangle(XBrushes.LightGray, margin, yPos, pageWidth, headerHeight);
+                 gfx.DrawRectangle(XPens.Black, margin, yPos, pageWidth, headerHeight);
+
+                 for (int i = 0; i < columnHeaders.Length; i++)
+                 {
+                     gfx.DrawString(columnHeaders[i], boldFont, XBrushes.Black, new XRect(margin + i * columnWidth, yPos, columnWidth, headerHeight), XStringFormats.Center);
+                 }
+
+                 yPos += headerHeight;
+
+                 // Table rows
+                 foreach (var demande in demandes)
+                 {
+                     gfx.DrawRectangle(XPens.Black, margin, yPos, pageWidth, rowHeight);
+                     gfx.DrawString(demande.Nom, font, XBrushes.Black, new XRect(margin, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.Prenom, font, XBrushes.Black, new XRect(margin + columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.IdEmploye, font, XBrushes.Black, new XRect(margin + 2 * columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.AffectationDepartement, font, XBrushes.Black, new XRect(margin + 3 * columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.TypeVoiture, font, XBrushes.Black, new XRect(margin + 4 * columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.Destination, font, XBrushes.Black, new XRect(margin + 5 * columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.DateDepart.ToShortDateString(), font, XBrushes.Black, new XRect(margin + 6 * columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.DateArrivee.ToShortDateString(), font, XBrushes.Black, new XRect(margin + 7 * columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.Description, font, XBrushes.Black, new XRect(margin + 8 * columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.Mission, font, XBrushes.Black, new XRect(margin + 9 * columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.Etat, font, XBrushes.Black, new XRect(margin + 10 * columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     gfx.DrawString(demande.Voiture != null ? demande.Voiture.Matricule : "Not Assigned", font, XBrushes.Black, new XRect(margin + 11 * columnWidth, yPos, columnWidth, rowHeight), XStringFormats.Center);
+                     yPos += rowHeight;
+
+                     // Add extra page if needed
+                     if (yPos > page.Height - margin - rowHeight)
+                     {
+                         page = document.AddPage();
+                         gfx = XGraphics.FromPdfPage(page);
+                         yPos = margin;
+
+                         // Redraw title and headers on new page
+                         gfx.DrawString("Demandes Report", boldFont, XBrushes.Black, new XRect(margin, yPos, pageWidth, headerHeight), XStringFormats.TopLeft);
+                         yPos += headerHeight + 10;
+
+                         gfx.DrawRectangle(XBrushes.LightGray, margin, yPos, pageWidth, headerHeight);
+                         gfx.DrawRectangle(XPens.Black, margin, yPos, pageWidth, headerHeight);
+
+                         for (int i = 0; i < columnHeaders.Length; i++)
+                         {
+                             gfx.DrawString(columnHeaders[i], boldFont, XBrushes.Black, new XRect(margin + i * columnWidth, yPos, columnWidth, headerHeight), XStringFormats.Center);
+                         }
+
+                         yPos += headerHeight;
+                     }
+                 }
+
+                 // Finalize and return the PDF
+                 document.Save(stream, false);
+                 return File(stream.ToArray(), "application/pdf", "Demandes.pdf");
+             }
+         }
+        
+
+
+       /* public async Task<IActionResult> DownloadAllPdf(string searchString, string searchMatricule)
+        {
+            var demandes = await _demandesService.GetAllDemandesAsync();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                demandes = demandes.Where(d => d.IdEmploye.Contains(searchString)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(searchMatricule))
+            {
+                demandes = demandes.Where(d => d.Voiture != null && d.Voiture.Matricule.Contains(searchMatricule)).ToList();
+            }
+
+            using (var stream = new MemoryStream())
+            {
+                var document = new PdfDocument();
+                var page = document.AddPage();
+                var gfx = XGraphics.FromPdfPage(page);
+                var font = new XFont("Arial", 10);
+                var boldFont = new XFont("Arial", 10, XFontStyle.Bold);
+                var margin = 40;
+                var pageWidth = page.Width - 2 * margin;
+                var rowHeight = 20;
+                var headerHeight = rowHeight;
+                var yPos = margin;
+
+                // Title
+                gfx.DrawString("Demandes Report", boldFont, XBrushes.Black, new XRect(margin, yPos, pageWidth, headerHeight), XStringFormats.TopLeft);
+                yPos += headerHeight + 10;
+
+                // Table headers
+                var columnHeaders = new[] {
+            "Nom", "Prenom", "Id Employe", "Affectation Departement", "Type Voiture",
+            "Destination", "Date Depart", "Date Arrivee", "Description", "Mission", "Etat", "Matricule"
+        };
+
+                var columnWidth = pageWidth / columnHeaders.Length;
+                gfx.DrawRectangle(XBrushes.LightGray, margin, yPos, pageWidth, headerHeight);
+                gfx.DrawRectangle(XPens.Black, margin, yPos, pageWidth, headerHeight);
+
+                for (int i = 0; i < columnHeaders.Length; i++)
+                {
+                    gfx.DrawString(columnHeaders[i], boldFont, XBrushes.Black, new XRect(margin + i * columnWidth, yPos, columnWidth, headerHeight), XStringFormats.Center);
+                }
+
+                yPos += headerHeight;
+
+                // Table rows
+                foreach (var demande in demandes)
+                {
+                    gfx.DrawRectangle(XPens.Black, margin, yPos, pageWidth, rowHeight);
+
+                    // Adjust column widths and text wrapping
+                    DrawCell(gfx, font, new XRect(margin, yPos, columnWidth, rowHeight), demande.Nom);
+                    DrawCell(gfx, font, new XRect(margin + columnWidth, yPos, columnWidth, rowHeight), demande.Prenom);
+                    DrawCell(gfx, font, new XRect(margin + 2 * columnWidth, yPos, columnWidth, rowHeight), demande.IdEmploye);
+                    DrawCell(gfx, font, new XRect(margin + 3 * columnWidth, yPos, columnWidth, rowHeight), demande.AffectationDepartement);
+                    DrawCell(gfx, font, new XRect(margin + 4 * columnWidth, yPos, columnWidth, rowHeight), demande.TypeVoiture);
+                    DrawCell(gfx, font, new XRect(margin + 5 * columnWidth, yPos, columnWidth, rowHeight), demande.Destination);
+                    DrawCell(gfx, font, new XRect(margin + 6 * columnWidth, yPos, columnWidth, rowHeight), demande.DateDepart.ToShortDateString());
+                    DrawCell(gfx, font, new XRect(margin + 7 * columnWidth, yPos, columnWidth, rowHeight), demande.DateArrivee.ToShortDateString());
+                    DrawCell(gfx, font, new XRect(margin + 8 * columnWidth, yPos, columnWidth, rowHeight), demande.Description);
+                    DrawCell(gfx, font, new XRect(margin + 9 * columnWidth, yPos, columnWidth, rowHeight), demande.Mission);
+                    DrawCell(gfx, font, new XRect(margin + 10 * columnWidth, yPos, columnWidth, rowHeight), demande.Etat);
+                    DrawCell(gfx, font, new XRect(margin + 11 * columnWidth, yPos, columnWidth, rowHeight), demande.Voiture != null ? demande.Voiture.Matricule : "Not Assigned");
+
+                    yPos += rowHeight;
+
+                    // Add extra page if needed
+                    if (yPos > page.Height - margin - rowHeight)
+                    {
+                        page = document.AddPage();
+                        gfx = XGraphics.FromPdfPage(page);
+                        yPos = margin;
+
+                        // Redraw title and headers on new page
+                        gfx.DrawString("Demandes Report", boldFont, XBrushes.Black, new XRect(margin, yPos, pageWidth, headerHeight), XStringFormats.TopLeft);
+                        yPos += headerHeight + 10;
+
+                        gfx.DrawRectangle(XBrushes.LightGray, margin, yPos, pageWidth, headerHeight);
+                        gfx.DrawRectangle(XPens.Black, margin, yPos, pageWidth, headerHeight);
+
+                        for (int i = 0; i < columnHeaders.Length; i++)
+                        {
+                            gfx.DrawString(columnHeaders[i], boldFont, XBrushes.Black, new XRect(margin + i * columnWidth, yPos, columnWidth, headerHeight), XStringFormats.Center);
+                        }
+
+                        yPos += headerHeight;
+                    }
+                }
+
+                // Finalize and return the PDF
+                document.Save(stream, false);
+                return File(stream.ToArray(), "application/pdf", "Demandes.pdf");
+            }
+        }
+
+        // Helper method to draw text within a cell with wrapping
+        private void DrawCell(XGraphics gfx, XFont font, XRect rect, string text)
+        {
+            var textFormatter = new XTextFormatter(gfx);
+            textFormatter.DrawString(text, font, XBrushes.Black, rect, XStringFormats.Center);
+        }*/
+
+
+
+
+
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
 
 
     }

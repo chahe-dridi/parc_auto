@@ -47,6 +47,7 @@ namespace parc_auto_v1.Services
 
 
 
+<<<<<<< HEAD
       /*  public async Task<List<Voiture>> GetAllVoituresAsync()
         {
             return await _context.Voitures.ToListAsync();
@@ -56,6 +57,9 @@ namespace parc_auto_v1.Services
         {
             return await _context.Voitures.FindAsync(id);
         } */
+=======
+       
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
 
         public async Task AddVoitureAsync(Voiture voiture)
         {

@@ -1,5 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
+<<<<<<< HEAD
+=======
+using parc_auto_v1.Services;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

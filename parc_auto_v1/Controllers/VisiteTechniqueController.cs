@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
@@ -7,6 +12,10 @@ using System.Threading.Tasks;
 
 namespace parc_auto_v1.Controllers
 {
+<<<<<<< HEAD
+=======
+    [Authorize(Roles = "admin")]
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
     public class VisiteTechniqueController : Controller
     {
         private readonly IVisiteTechniqueService _visiteTechniqueService;

@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
 using parc_auto_v1.Services;
@@ -7,6 +13,10 @@ using System.Threading.Tasks;
 
 namespace parc_auto_v1.Controllers // Change namespace to Controllers
 {
+<<<<<<< HEAD
+=======
+    [Authorize(Roles="admin")]
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
     public class VoitureController : Controller
     {
         private readonly IVoitureService _voitureService;
@@ -66,7 +76,11 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
             return View(voiture);
         }
 
+<<<<<<< HEAD
         // GET: Voiture/Edit/5
+=======
+      
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
         // GET: Voiture/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -82,11 +96,19 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
             }
 
             ViewBag.Marques = await _marqueService.GetAllMarquesAsync();
+<<<<<<< HEAD
             ViewBag.Modeles = await _modeleService.GetModelesByMarqueIdAsync(voiture.MarqueId); // Load modeles based on MarqueId
+=======
+            ViewBag.Modeles = await _modeleService.GetModelesByMarqueIdAsync(voiture.MarqueId);
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
             return View(voiture);
         }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
         // POST: Voiture/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -193,6 +215,9 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
     }
 }

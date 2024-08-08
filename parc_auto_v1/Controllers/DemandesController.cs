@@ -1,10 +1,20 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
 using parc_auto_v1.Models;
 using parc_auto_v1.Services;
 using System.Threading.Tasks;
 
 namespace parc_auto_v1.Controllers
 {
+<<<<<<< HEAD
+=======
+    [Authorize(Roles = "utilisateur,admin")]
+    
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
     public class DemandesController : Controller
     {
         private readonly IDemandesService _demandesService;
