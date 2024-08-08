@@ -1,0 +1,50 @@
+﻿@model IEnumerable<parc_auto_v1.Models.Demandes>
+
+<h1>All Demandes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Id Employe</th>
+            <th>Affectation Departement</th>
+            <th>Type Voiture</th>
+            <th>Destination</th>
+            <th>Date Depart</th>
+            <th>Date Arrivee</th>
+          
+            <th>Description</th>
+            <th>Mission</th>
+            <th>Etat</th>
+            <th>Matricule</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var demande in Model)
+        {
+            <tr>
+                <td>@demande.Nom</td>
+                <td>@demande.Prenom</td>
+                <td>@demande.IdEmploye</td>
+                <td>@demande.AffectationDepartement</td>
+                <td>@demande.TypeVoiture</td>
+                <td>@demande.Destination</td>
+                <td>@demande.DateDepart.ToShortDateString()</td>
+                <td>@demande.DateArrivee.ToShortDateString()</td>
+             
+                <td>@demande.Description</td>
+                <td>@demande.Mission</td>
+              
+                <td>@demande.Etat</td>
+                <td>
+                    @(demande.Voiture != null ? Html.DisplayFor(modelItem => demande.Voiture.Matricule) : "En attente")
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@demande.Id">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
