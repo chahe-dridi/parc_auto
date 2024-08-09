@@ -1,0 +1,206 @@
+<<<<<<< HEAD
+﻿using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using parc_auto_v1.Models;
+using parc_auto_v1.Services;
+using System.Threading.Tasks;
+
+namespace parc_auto_v1.Controllers
+{
+<<<<<<< HEAD
+=======
+    [Authorize(Roles = "admin")]
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+    public class VignetteController : Controller
+    {
+        private readonly IVignetteService _vignetteService;
+        private readonly IVoitureService _voitureService;
+
+        public VignetteController(IVignetteService vignetteService, IVoitureService voitureService)
+        {
+            _vignetteService = vignetteService;
+            _voitureService = voitureService;
+        }
+
+        // GET: Vignette
+        public async Task<IActionResult> Index()
+        {
+            var vignettes = await _vignetteService.GetAllVignettesAsync();
+            return View(vignettes);
+        }
+
+        // GET: Vignette/Details/5
+<<<<<<< HEAD
+=======
+      /*  public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var vignette = await _vignetteService.GetVignetteByIdAsync(id.Value);
+            if (vignette == null)
+            {
+                return NotFound();
+            }
+
+            return View(vignette);
+        }
+      */
+
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var vignette = await _vignetteService.GetVignetteByIdAsync(id.Value);
+            if (vignette == null)
+            {
+                return NotFound();
+            }
+
+            return View(vignette);
+<<<<<<< HEAD
+
+
+        }
+
+=======
+        }
+
+
+      
+
+
+
+
+
+
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+        // GET: Vignette/Create
+        [HttpGet]
+        public async Task<IActionResult> Create(int? voitureId)
+        {
+            var model = new Vignette
+            {
+                VoitureId = voitureId ?? 0 // Set the VoitureId in the model
+            };
+
+            var voitures = await _voitureService.GetAllVoituresAsync();
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", voitureId);
+
+            return View(model);
+        }
+
+        // POST: Vignette/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,DateEchance,DateValide,Alert,PrixUnitaire,VoitureId")] Vignette vignette)
+        {
+          //  if (ModelState.IsValid)
+            {
+                await _vignetteService.AddVignetteAsync(vignette);
+                TempData["SuccessMessage"] = "Vignette has been created successfully!";
+                return RedirectToAction(nameof(Index));
+            }
+            var voitures = await _voitureService.GetAllVoituresAsync();
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", vignette.VoitureId);
+            return View(vignette);
+        }
+
+        // GET: Vignette/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var vignette = await _vignetteService.GetVignetteByIdAsync(id.Value);
+            if (vignette == null)
+            {
+                return NotFound();
+            }
+            var voitures = await _voitureService.GetAllVoituresAsync();
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", vignette.VoitureId);
+            return View(vignette);
+        }
+
+        // POST: Vignette/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DateEchance,DateValide,Alert,PrixUnitaire,VoitureId")] Vignette vignette)
+        {
+            if (id != vignette.Id)
+            {
+                return NotFound();
+            }
+
+            //if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _vignetteService.UpdateVignetteAsync(vignette);
+                    TempData["SuccessMessage"] = "Vignette has been updated successfully!";
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!await VignetteExists(vignette.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            var voitures = await _voitureService.GetAllVoituresAsync();
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", vignette.VoitureId);
+            return View(vignette);
+        }
+
+        // GET: Vignette/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var vignette = await _vignetteService.GetVignetteByIdAsync(id.Value);
+            if (vignette == null)
+            {
+                return NotFound();
+            }
+
+            return View(vignette);
+        }
+
+        // POST: Vignette/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            await _vignetteService.DeleteVignetteAsync(id);
+            TempData["SuccessMessage"] = "Vignette has been deleted successfully!";
+            return RedirectToAction(nameof(Index));
+        }
+
+        private async Task<bool> VignetteExists(int id)
+        {
+            var vignette = await _vignetteService.GetVignetteByIdAsync(id);
+            return vignette != null;
+        }
+    }
+}

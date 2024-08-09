@@ -1,0 +1,48 @@
+﻿@model parc_auto_v1.Models.VisiteTechnique
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>VisiteTechnique</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateEchance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateEchance)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateValide)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateValide)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Alert)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Alert)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PrixUnitaire)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PrixUnitaire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Voiture.Matricule)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Voiture.Matricule)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

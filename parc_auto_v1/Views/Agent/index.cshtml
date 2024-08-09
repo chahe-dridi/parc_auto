@@ -1,0 +1,37 @@
+﻿@model IEnumerable<parc_auto_v1.Models.Voiture>
+
+@{
+    ViewData["Title"] = "Voiture List";
+}
+
+<h2>Voiture List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Matricule</th>
+            <th>Disponibilité</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var voiture in Model)
+        {
+            @if (voiture.Disponibilite == "Reserved")
+            {
+                <tr>
+                    <td>@voiture.Matricule</td>
+                    <td>@voiture.Disponibilite</td>
+                    <td>
+                        @if (voiture.Disponibilite == "Reserved")
+                        {
+                            <form asp-action="ChangeDisponibilite" method="post" asp-route-id="@voiture.Id">
+                                <button type="submit" class="btn btn-primary">Rendre Disponible</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

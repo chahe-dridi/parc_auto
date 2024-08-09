@@ -1,0 +1,59 @@
+﻿@model parc_auto_v1.Models.Assurance
+
+@{
+    ViewData["Title"] = "Edit Assurance";
+}
+
+<h2>Edit Assurance</h2>
+
+<h4>Assurance</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="DateEchance" class="control-label"></label>
+                <input asp-for="DateEchance" class="form-control" />
+                <span asp-validation-for="DateEchance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateValide" class="control-label"></label>
+                <input asp-for="DateValide" class="form-control" />
+                <span asp-validation-for="DateValide" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alert" class="control-label"></label>
+                <input asp-for="Alert" class="form-control" />
+                <span asp-validation-for="Alert" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrixUnitaire" class="control-label"></label>
+                <input asp-for="PrixUnitaire" class="form-control" />
+                <span asp-validation-for="PrixUnitaire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VoitureId" class="control-label"></label>
+<<<<<<< HEAD
+                <select asp-for="VoitureId" class="form-control" asp-items="@ViewBag.Voitures"></select>
+=======
+                <select asp-for="VoitureId" class="form-control" asp-items="@(new SelectList(ViewBag.Voitures, "Id", "Matricule"))"></select>
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+                <span asp-validation-for="VoitureId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

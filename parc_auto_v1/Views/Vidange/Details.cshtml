@@ -1,0 +1,67 @@
+﻿@model parc_auto_v1.Models.Vidange
+
+@{
+    ViewData["Title"] = "Vidange Details";
+}
+
+<h2>Vidange Details</h2>
+
+<div>
+    <h4>Vidange</h4>
+    <hr />
+    <dl class="row">
+        <dd class="col-sm-10">
+            @Model.DateIntervention.ToString("yyyy-MM-dd")
+        </dd>
+
+        <dd class="col-sm-10">
+            @Model.DateIntervention.ToShortDateString()
+        </dd>
+        <dt class="col-sm-2">
+            Type Intervention
+        </dt>
+        <dd class="col-sm-10">
+            @Model.TypeIntervention
+        </dd>
+        <dt class="col-sm-2">
+            Fournisseur
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Fournisseur
+        </dd>
+        <dt class="col-sm-2">
+            NFacture
+        </dt>
+        <dd class="col-sm-10">
+            @Model.NFacture
+        </dd>
+        <dt class="col-sm-2">
+            Kilometrage
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Kilometrage
+        </dd>
+        <dt class="col-sm-2">
+            Operation Details
+        </dt>
+        <dd class="col-sm-10">
+            @Model.OperationDetails
+        </dd>
+        <dt class="col-sm-2">
+            Montant HT
+        </dt>
+        <dd class="col-sm-10">
+            @Model.MontantHt.ToString("C")
+        </dd>
+        <dt class="col-sm-2">
+            Voiture
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Voiture.Matricule
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
