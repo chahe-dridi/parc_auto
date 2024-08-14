@@ -70,6 +70,7 @@
         <input asp-for="Mission" class="form-control" />
         <span asp-validation-for="Mission" class="text-danger"></span>
     </div>
+<<<<<<< HEAD
 
     <div class="form-group">
         <label asp-for="Kilometrage" class="control-label"></label>
@@ -77,6 +78,8 @@
         <span asp-validation-for="Kilometrage" class="text-danger"></span>
     </div>
 
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
     
     <div class="form-group">
         <label asp-for="Etat" class="control-label"></label>
@@ -93,6 +96,13 @@
             <option value="">-- Select a Car --</option>
             @foreach (var voiture in ViewBag.AvailableVoitures)
             {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                <option value="@voiture.Id" selected="@(Model.VoitureId == voiture.Id ? "selected" : "")">
+                    @voiture.Marque @voiture.Modele
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                 <option value="@voiture.Id">
                     @if (voiture.Marque != null && voiture.Modele != null)
                     {
@@ -102,6 +112,10 @@
                     {
                         @voiture.Matricule
                     }
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                 </option>
             }
         </select>

@@ -1,26 +1,68 @@
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
 using parc_auto_v1.Services;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Identity;
 using OfficeOpenXml;
+=======
+<<<<<<< HEAD
+ 
+=======
+using Microsoft.AspNetCore.Identity;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+<<<<<<< HEAD
 builder.Services.AddRazorPages(); // Add this line to include Razor Pages
+=======
+<<<<<<< HEAD
+=======
+builder.Services.AddRazorPages(); // Add this line to include Razor Pages
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 
 // Register the services
 builder.Services.AddScoped<IVisiteTechniqueService, VisiteTechniqueService>();
 builder.Services.AddScoped<IVoitureService, VoitureService>();
+<<<<<<< HEAD
 builder.Services.AddScoped<IVignetteService, VignetteService>();
+=======
+<<<<<<< HEAD
+builder.Services.AddScoped<IVignetteService, VignetteService>(); // Register the Vignette service
+=======
+builder.Services.AddScoped<IVignetteService, VignetteService>();
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 builder.Services.AddScoped<IVidangeService, VidangeService>();
 builder.Services.AddScoped<ISinistreService, SinistreService>();
 builder.Services.AddScoped<IAssuranceService, AssuranceService>();
 builder.Services.AddScoped<IDemandesService, DemandesService>();
+<<<<<<< HEAD
 builder.Services.AddScoped<IMarqueService, MarqueService>();
 builder.Services.AddScoped<IModeleService, ModeleService>();
 
+=======
+<<<<<<< HEAD
+
+
+
+
+builder.Services.AddScoped<IMarqueService, MarqueService>();
+builder.Services.AddScoped<IModeleService, ModeleService>();
+
+ 
+
+
+=======
+builder.Services.AddScoped<IMarqueService, MarqueService>();
+builder.Services.AddScoped<IModeleService, ModeleService>();
+
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 // Configure the DbContext with the connection string
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
@@ -28,6 +70,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -35,6 +82,10 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
 
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -49,6 +100,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+<<<<<<< HEAD
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -59,10 +111,26 @@ app.UseAuthorization();
 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
 
+=======
+<<<<<<< HEAD
+=======
+app.UseAuthentication();
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+app.UseAuthorization();
+
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+<<<<<<< HEAD
 app.MapRazorPages(); // Add this line to map Razor Pages
 
+=======
+<<<<<<< HEAD
+=======
+app.MapRazorPages(); // Add this line to map Razor Pages
+
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 app.Run();

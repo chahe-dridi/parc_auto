@@ -34,6 +34,7 @@ namespace parc_auto_v1.Models
         public string Destination { get; set; }
 
         [Required]
+<<<<<<< HEAD
         [Display(Name = "Date Depart")]
         [DataType(DataType.Date)]
         public DateTime DateDepart { get; set; }
@@ -41,6 +42,11 @@ namespace parc_auto_v1.Models
         [Required]
         [Display(Name = "Date Depart")]
         [DataType(DataType.Date)]
+=======
+        public DateTime DateDepart { get; set; }
+
+        [Required]
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
         public DateTime DateArrivee { get; set; }
 
        
@@ -61,9 +67,12 @@ namespace parc_auto_v1.Models
         // Etat can be null
         [StringLength(50)]
         public string? Etat { get; set; } // Changed to nullable
+<<<<<<< HEAD
 
 
         public int? Kilometrage { get; set; } // Nullable integer property
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
     }
 
 

@@ -11,11 +11,25 @@
 using System;
 using System.Reflection;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+[assembly: System.Reflection.AssemblyCompanyAttribute("parc_auto_v1")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2abd4f7f33789d0dbc899f248cbc11b5d6c3602")]
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("parc_auto_v1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c94c419bfc414e593819eb5b9c05fcf9a619206a")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3e26df83635885fee1b8af07f0d69006a29fab5")]
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [assembly: System.Reflection.AssemblyProductAttribute("parc_auto_v1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("parc_auto_v1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

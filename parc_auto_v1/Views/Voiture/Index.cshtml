@@ -82,14 +82,24 @@
                 <a asp-action="Create" class="btn btn-primary btn-block btn-custom">Create New</a>
             </div>
             <div class="col-md-8">
+<<<<<<< HEAD
                 <form id="searchForm" class="form-inline float-right">
                     <div class="input-group">
                         <input type="text" class="form-control" id="searchString" name="searchString" placeholder="Search by Matricule..." autocomplete="off">
+=======
+                <form class="form-inline float-right" asp-controller="Voiture" asp-action="Index">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="searchString" placeholder="Search by Matricule..." value="@ViewData["CurrentFilter"]">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                        </div>
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                     </div>
                 </form>
             </div>
         </div>
 
+<<<<<<< HEAD
         <div id="voitureList">
             @await Html.PartialAsync("_VoitureListPartial", Model)
         </div>
@@ -114,5 +124,43 @@
             });
         });
     </script>
+=======
+        <table class="table table-bordered table-hover table-custom">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.First().Matricule)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().TypeVoiture)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Marque)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Modele)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Km)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Carburant)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Etat)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Disponibilite)</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Matricule)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TypeVoiture)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Marque.Nom)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Modele.Nom)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Km)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Carburant)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Etat)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Disponibilite)</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning btn-custom">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info btn-custom">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger btn-custom">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 </body>
 </html>

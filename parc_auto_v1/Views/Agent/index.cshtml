@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@model IEnumerable<parc_auto_v1.Models.Demandes>
 
 @{
@@ -34,3 +35,42 @@
         </tbody>
     </table>
 </form>
+=======
+﻿@model IEnumerable<parc_auto_v1.Models.Voiture>
+
+@{
+    ViewData["Title"] = "Voiture List";
+}
+
+<h2>Voiture List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Matricule</th>
+            <th>Disponibilité</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var voiture in Model)
+        {
+            @if (voiture.Disponibilite == "Reserved")
+            {
+                <tr>
+                    <td>@voiture.Matricule</td>
+                    <td>@voiture.Disponibilite</td>
+                    <td>
+                        @if (voiture.Disponibilite == "Reserved")
+                        {
+                            <form asp-action="ChangeDisponibilite" method="post" asp-route-id="@voiture.Id">
+                                <button type="submit" class="btn btn-primary">Rendre Disponible</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122

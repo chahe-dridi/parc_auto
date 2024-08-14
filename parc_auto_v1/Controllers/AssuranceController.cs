@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+=======
+<<<<<<< HEAD
+﻿using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
@@ -8,7 +17,14 @@ using System.Threading.Tasks;
 
 namespace parc_auto_v1.Controllers
 {
+<<<<<<< HEAD
     [Authorize(Roles = "admin")]
+=======
+<<<<<<< HEAD
+=======
+    [Authorize(Roles = "admin")]
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
     public class AssuranceController : Controller
     {
         private readonly IAssuranceService _assuranceService;
@@ -74,6 +90,12 @@ namespace parc_auto_v1.Controllers
             return View(assurance);
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        // GET: Assurance/Edit/5
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 
 
 
@@ -86,6 +108,10 @@ namespace parc_auto_v1.Controllers
 
 
 
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -100,11 +126,25 @@ namespace parc_auto_v1.Controllers
             }
 
             var voitures = await _voitureService.GetAllVoituresAsync();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", assurance.VoitureId);
+            return View(assurance);
+        }
+
+        // POST: Assurance/Edit/5
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
             ViewBag.Voitures = voitures;
 
             return View(assurance);
         }
 
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,DateEchance,DateValide,Alert,PrixUnitaire,VoitureId")] Assurance assurance)
@@ -114,6 +154,11 @@ namespace parc_auto_v1.Controllers
                 return NotFound();
             }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
             if (ModelState.IsValid)
             {
                 try
@@ -178,6 +223,10 @@ namespace parc_auto_v1.Controllers
                 return NotFound();
             }
 
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
             //if (ModelState.IsValid)
             {
                 try
@@ -202,7 +251,15 @@ namespace parc_auto_v1.Controllers
             var voitures = await _voitureService.GetAllVoituresAsync();
             ViewData["VoitureId"] = new SelectList(voitures, "Id", "Matricule", assurance.VoitureId);
             return View(assurance);
+<<<<<<< HEAD
         }*/
+=======
+<<<<<<< HEAD
+        }
+=======
+        }*/
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 
         // GET: Assurance/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -231,6 +288,7 @@ namespace parc_auto_v1.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+<<<<<<< HEAD
 
 
 
@@ -261,5 +319,16 @@ namespace parc_auto_v1.Controllers
 
 
 
+=======
+<<<<<<< HEAD
+        private async Task<bool> AssuranceExists(int id)
+        {
+            var assurance = await _assuranceService.GetAssuranceByIdAsync(id);
+            return assurance != null;
+        }
+=======
+       
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
     }
 }

@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+=======
+<<<<<<< HEAD
+﻿using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
@@ -8,7 +17,14 @@ using System.Threading.Tasks;
 
 namespace parc_auto_v1.Controllers
 {
+<<<<<<< HEAD
     [Authorize(Roles = "admin")]
+=======
+<<<<<<< HEAD
+=======
+    [Authorize(Roles = "admin")]
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
     public class SinistreController : Controller
     {
         private readonly ISinistreService _sinistreService;
@@ -185,6 +201,7 @@ namespace parc_auto_v1.Controllers
         {
             return await _sinistreService.SinistreExists(id);
         }
+<<<<<<< HEAD
 
 
 
@@ -214,5 +231,7 @@ namespace parc_auto_v1.Controllers
 
 
 
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
     }
 }

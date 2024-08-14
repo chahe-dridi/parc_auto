@@ -22,8 +22,18 @@
             <div class="form-group">
                 <label asp-for="TypeVoiture" class="control-label"></label>
                 <select asp-for="TypeVoiture" class="form-control">
+<<<<<<< HEAD
                     <option value="4 places" selected="@(Model.TypeVoiture == "4 places" ? "selected" : "")">4 places</option>
                     <option value="utilities" selected="@(Model.TypeVoiture == "utilities" ? "selected" : "")">Utilities</option>
+=======
+<<<<<<< HEAD
+                    <option value="4 places">4 places</option>
+                    <option value="utilities">Utilities</option>
+=======
+                    <option value="4 places" selected="@(Model.TypeVoiture == "4 places" ? "selected" : "")">4 places</option>
+                    <option value="utilities" selected="@(Model.TypeVoiture == "utilities" ? "selected" : "")">Utilities</option>
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                 </select>
                 <span asp-validation-for="TypeVoiture" class="text-danger"></span>
             </div>
@@ -34,7 +44,15 @@
                     <option value="">-- Select Marque --</option>
                     @foreach (var marque in ViewBag.Marques)
                     {
+<<<<<<< HEAD
                         <option value="@marque.Id" selected="@(marque.Id == Model.MarqueId ? "selected" : "")">@marque.Nom</option>
+=======
+<<<<<<< HEAD
+                        <option value="@marque.Id">@marque.Nom</option>
+=======
+                        <option value="@marque.Id" selected="@(marque.Id == Model.MarqueId ? "selected" : "")">@marque.Nom</option>
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                     }
                 </select>
                 <button type="button" class="btn btn-primary" id="addMarque">Add Marque</button>
@@ -60,8 +78,18 @@
             <div class="form-group">
                 <label asp-for="Carburant" class="control-label"></label>
                 <select asp-for="Carburant" class="form-control">
+<<<<<<< HEAD
                     <option value="Essence" selected="@(Model.Carburant == "Essence" ? "selected" : "")">Essence</option>
                     <option value="Gazol" selected="@(Model.Carburant == "Gazol" ? "selected" : "")">Gazol</option>
+=======
+<<<<<<< HEAD
+                    <option value="Essence">Essence</option>
+                    <option value="Gazol">Gazol</option>
+=======
+                    <option value="Essence" selected="@(Model.Carburant == "Essence" ? "selected" : "")">Essence</option>
+                    <option value="Gazol" selected="@(Model.Carburant == "Gazol" ? "selected" : "")">Gazol</option>
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                 </select>
                 <span asp-validation-for="Carburant" class="text-danger"></span>
             </div>
@@ -75,10 +103,23 @@
             <div class="form-group">
                 <label asp-for="Disponibilite" class="control-label"></label>
                 <select asp-for="Disponibilite" class="form-control">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                    <option value="Pre Reserved">Pre Reserved</option>
+                    <option value="Reserved">Reserved</option>
+                    <option value="Disponible">Disponible</option>
+                    <option value="En Arrivage">En Arrivage</option>
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                     <option value="Pre Reserved" selected="@(Model.Disponibilite == "Pre Reserved" ? "selected" : "")">Pre Reserved</option>
                     <option value="Reserved" selected="@(Model.Disponibilite == "Reserved" ? "selected" : "")">Reserved</option>
                     <option value="Disponible" selected="@(Model.Disponibilite == "Disponible" ? "selected" : "")">Disponible</option>
                     <option value="En Arrivage" selected="@(Model.Disponibilite == "En Arrivage" ? "selected" : "")">En Arrivage</option>
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                 </select>
                 <span asp-validation-for="Disponibilite" class="text-danger"></span>
             </div>
@@ -95,7 +136,15 @@
 </div>
 
 @section Scripts {
+<<<<<<< HEAD
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+=======
+<<<<<<< HEAD
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+=======
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
     <script>
         $(document).ready(function () {
             // Populate Modele dropdown based on Marque selection
@@ -109,21 +158,39 @@
                         $.each(data, function (i, modele) {
                             $modeleSelect.append('<option value="' + modele.id + '">' + modele.nom + '</option>');
                         });
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 
                         // Set selected Modele
                         var selectedModeleId = '@Model.ModeleId';
                         if (selectedModeleId) {
                             $modeleSelect.val(selectedModeleId);
                         }
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                     });
                 } else {
                     $('#modele-select').empty().append('<option value="">-- Select Modele --</option>');
                 }
             });
 
+<<<<<<< HEAD
             // Trigger change event on page load to populate Modele options based on existing Marque
             $('#marque-select').trigger('change');
 
+=======
+<<<<<<< HEAD
+=======
+            // Trigger change event on page load to populate Modele options based on existing Marque
+            $('#marque-select').trigger('change');
+
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
             // Add new Marque
             $('#addMarque').click(function () {
                 var newMarque = prompt("Enter new Marque:");

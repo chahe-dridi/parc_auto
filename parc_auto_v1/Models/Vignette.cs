@@ -23,4 +23,11 @@ namespace parc_auto_v1.Models
         public int VoitureId { get; set; }
         public Voiture Voiture { get; set; }
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 }

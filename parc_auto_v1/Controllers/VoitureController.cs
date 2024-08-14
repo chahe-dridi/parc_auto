@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+=======
+<<<<<<< HEAD
+﻿using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 using Microsoft.EntityFrameworkCore;
 using parc_auto_v1.Models;
 using parc_auto_v1.Services;
@@ -9,7 +19,14 @@ using System.Threading.Tasks;
 
 namespace parc_auto_v1.Controllers // Change namespace to Controllers
 {
+<<<<<<< HEAD
     [Authorize(Roles="admin")]
+=======
+<<<<<<< HEAD
+=======
+    [Authorize(Roles="admin")]
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
     public class VoitureController : Controller
     {
         private readonly IVoitureService _voitureService;
@@ -69,7 +86,15 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
             return View(voiture);
         }
 
+<<<<<<< HEAD
       
+=======
+<<<<<<< HEAD
+        // GET: Voiture/Edit/5
+=======
+      
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
         // GET: Voiture/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -85,12 +110,27 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
             }
 
             ViewBag.Marques = await _marqueService.GetAllMarquesAsync();
+<<<<<<< HEAD
             ViewBag.Modeles = await _modeleService.GetModelesByMarqueIdAsync(voiture.MarqueId);
+=======
+<<<<<<< HEAD
+            ViewBag.Modeles = await _modeleService.GetModelesByMarqueIdAsync(voiture.MarqueId); // Load modeles based on MarqueId
+=======
+            ViewBag.Modeles = await _modeleService.GetModelesByMarqueIdAsync(voiture.MarqueId);
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
             return View(voiture);
         }
 
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
         // POST: Voiture/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -194,6 +234,7 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
 
 
 
+<<<<<<< HEAD
         [HttpGet]
         public async Task<IActionResult> Search(string searchString)
         {
@@ -213,5 +254,14 @@ namespace parc_auto_v1.Controllers // Change namespace to Controllers
 
 
 
+=======
+
+
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
     }
 }

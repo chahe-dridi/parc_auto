@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 ﻿/*
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using parc_auto_v1.Models;
+using parc_auto_v1.Services;
+using System.Threading.Tasks;
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 
 namespace parc_auto_v1.Controllers
 {
@@ -37,6 +46,7 @@ namespace parc_auto_v1.Controllers
         }
     }
 }
+<<<<<<< HEAD
 */
 
 
@@ -102,3 +112,5 @@ namespace parc_auto_v1.Controllers
         }
     }
 }
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122

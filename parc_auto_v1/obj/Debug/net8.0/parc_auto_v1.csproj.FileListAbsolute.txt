@@ -257,6 +257,11 @@ C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\ICSharpCod
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\SixLabors.Fonts.dll
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\SixLabors.ImageSharp.dll
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\de\PdfSharpCore.resources.dll
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -292,7 +297,11 @@ C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\runtimes\w
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\obj\Debug\net8.0\parc_auto_v1.MvcApplicationPartsAssemblyInfo.cs
+<<<<<<< HEAD
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\EPPlus.dll
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\EPPlus.Interfaces.dll
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\EPPlus.System.Drawing.dll
 C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122

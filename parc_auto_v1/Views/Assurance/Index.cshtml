@@ -4,6 +4,68 @@
     ViewData["Title"] = "Assurances";
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<h2>Assurances</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateEchance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateValide)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alert)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrixUnitaire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voiture.Matricule)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateEchance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateValide)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alert)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrixUnitaire)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voiture.Matricule)
+                </td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Actions">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,14 +144,24 @@
                 <a asp-action="Create" class="btn btn-success btn-block btn-custom">Create New</a>
             </div>
             <div class="col-md-8">
+<<<<<<< HEAD
                 <form id="searchForm" class="form-inline float-right">
                     <div class="input-group">
                         <input type="text" class="form-control" id="searchString" name="searchString" placeholder="Search by Matricule..." autocomplete="off" value="@ViewData["CurrentFilter"]">
+=======
+                <form class="form-inline float-right" asp-controller="Assurance" asp-action="Index">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="searchString" placeholder="Search by Matricule..." value="@ViewData["CurrentFilter"]">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                        </div>
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                     </div>
                 </form>
             </div>
         </div>
 
+<<<<<<< HEAD
         <div id="assuranceList">
             @await Html.PartialAsync("_AssuranceListPartial", Model)
         </div>
@@ -116,3 +188,38 @@
     </script>
 </body>
 </html>
+=======
+        <table class="table table-bordered table-hover table-custom">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.First().DateEchance)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().DateValide)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Alert)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().PrixUnitaire)</th>
+                    <th>Voiture</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.DateEchance.ToString("yyyy-MM-dd")</td>
+                        <td>@item.DateValide.ToString("yyyy-MM-dd")</td>
+                        <td>@item.Alert</td>
+                        <td>@item.PrixUnitaire.ToString("C")</td>
+                        <td>@item.Voiture?.Matricule</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning btn-custom">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info btn-custom">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger btn-custom">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122

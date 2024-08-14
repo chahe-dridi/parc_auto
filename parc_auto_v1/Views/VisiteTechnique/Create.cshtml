@@ -11,6 +11,7 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
+<<<<<<< HEAD
 
             <div class="form-group">
                 <label asp-for="DateEchance" class="control-label"></label>
@@ -21,6 +22,16 @@
             <div class="form-group">
                 <label asp-for="DateValide" class="control-label"></label>
                 <input asp-for="DateValide" type="date" class="form-control" />
+=======
+            <div class="form-group">
+                <label asp-for="DateEchance" class="control-label"></label>
+                <input asp-for="DateEchance" class="form-control" />
+                <span asp-validation-for="DateEchance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateValide" class="control-label"></label>
+                <input asp-for="DateValide" class="form-control" />
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                 <span asp-validation-for="DateValide" class="text-danger"></span>
             </div>
             <div class="form-group">

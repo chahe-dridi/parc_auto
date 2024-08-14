@@ -26,6 +26,11 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\DARK\Desktop\.net\parc_auto_v1\parc_auto_v1
 build_property._RazorSourceGeneratorDebug = 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +63,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Assurance/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -78,10 +87,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Assurance/_AssuranceListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXF9Bc3N1cmFuY2VMaXN0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/DemandesAdmin/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNBZG1pblxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -94,10 +106,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNBZG1pblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/DemandesAdmin/_DemandesListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNBZG1pblxfRGVtYW5kZXNMaXN0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Demandes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -134,10 +149,19 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -162,10 +186,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Sinistre/_SinistreListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcX1NpbmlzdHJlTGlzdFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vidange/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -186,10 +213,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vidange/_VidangeListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxfVmlkYW5nZUxpc3RQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vignette/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -210,10 +240,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Vignette/_VignetteListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcX1ZpZ25ldHRlTGlzdFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/VisiteTechnique/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRlVGVjaG5pcXVlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -234,10 +267,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRlVGVjaG5pcXVlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/VisiteTechnique/_VisiteTechniqueListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRlVGVjaG5pcXVlXF9WaXNpdGVUZWNobmlxdWVMaXN0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Voiture/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9pdHVyZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -258,10 +294,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9pdHVyZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/Voiture/_VoitureListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9pdHVyZVxfVm9pdHVyZUxpc3RQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 [C:/Users/DARK/Desktop/.net/parc_auto_v1/parc_auto_v1/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

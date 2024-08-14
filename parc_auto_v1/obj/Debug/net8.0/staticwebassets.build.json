@@ -1,6 +1,14 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "BsY3lJRSM4IEJplPSQRNJTaiU8ILirEeY7XbKb3btlc=",
+=======
+<<<<<<< HEAD
+  "Hash": "dCKVqru07mO/QoKKwa8DVXsLnQ591RTNcV+iP6tF2hg=",
+=======
+  "Hash": "BsY3lJRSM4IEJplPSQRNJTaiU8ILirEeY7XbKb3btlc=",
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
   "Source": "parc_auto_v1",
   "BasePath": "_content/parc_auto_v1",
   "Mode": "Default",
@@ -17,6 +25,11 @@
   ],
   "Assets": [
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
       "Identity": "C:\\Users\\DARK\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.7\\staticwebassets\\V5\\css\\site.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
@@ -1157,6 +1170,10 @@
       "OriginalItemSpec": "C:\\Users\\DARK\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.7\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
       "Identity": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\parc_auto_v1.styles.css",
       "SourceId": "parc_auto_v1",
       "SourceType": "Computed",
@@ -2183,6 +2200,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
       "Identity": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\lib\\jquery\\dist\\jqueryy.min.js",
       "SourceId": "parc_auto_v1",
       "SourceType": "Discovered",
@@ -2202,6 +2224,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jqueryy.min.js"
     },
     {
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
       "Identity": "C:\\Users\\DARK\\Desktop\\.net\\parc_auto_v1\\parc_auto_v1\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "parc_auto_v1",
       "SourceType": "Discovered",

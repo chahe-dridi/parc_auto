@@ -4,7 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+<<<<<<< HEAD
 using parc_auto_v1.Services;
+=======
+<<<<<<< HEAD
+=======
+using parc_auto_v1.Services;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 
 #nullable disable
 
@@ -17,11 +24,24 @@ namespace parc_auto_v1.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+<<<<<<< HEAD
                 .HasAnnotation("ProductVersion", "8.0.7")
+=======
+<<<<<<< HEAD
+                .HasAnnotation("ProductVersion", "8.0.6")
+=======
+                .HasAnnotation("ProductVersion", "8.0.7")
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -51,19 +71,31 @@ namespace parc_auto_v1.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = "470c9b05-a498-4000-9566-9852dcb11957",
+=======
+                            Id = "7ba2359d-fdea-4ab4-8674-fbd7377aaeab",
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = "4ebcd55e-bb05-4b7f-a4cf-6e726e6b3372",
+=======
+                            Id = "9b17ad74-c3ad-457f-9f4d-6bdc4cc8da4b",
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                             Name = "utilisateur",
                             NormalizedName = "utilisateur"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = "0087cca3-27c8-4a15-ba0b-3b14fb3aa040",
+=======
+                            Id = "e3bc8525-8a07-49d6-b3a7-0fbf62a4e114",
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                             Name = "agent",
                             NormalizedName = "agent"
                         });
@@ -244,6 +276,10 @@ namespace parc_auto_v1.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
             modelBuilder.Entity("parc_auto_v1.Models.Assurance", b =>
                 {
                     b.Property<int>("Id")
@@ -312,9 +348,12 @@ namespace parc_auto_v1.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+<<<<<<< HEAD
                     b.Property<int?>("Kilometrage")
                         .HasColumnType("int");
 
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
                     b.Property<string>("Mission")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -572,6 +611,11 @@ namespace parc_auto_v1.Migrations
                     b.ToTable("Voitures");
                 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -623,6 +667,10 @@ namespace parc_auto_v1.Migrations
                         .IsRequired();
                 });
 
+<<<<<<< HEAD
+=======
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
             modelBuilder.Entity("parc_auto_v1.Models.Assurance", b =>
                 {
                     b.HasOne("parc_auto_v1.Models.Voiture", "Voiture")

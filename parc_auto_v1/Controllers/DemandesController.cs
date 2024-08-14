@@ -1,14 +1,31 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+=======
+<<<<<<< HEAD
+﻿using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
 using parc_auto_v1.Models;
 using parc_auto_v1.Services;
 using System.Threading.Tasks;
 
 namespace parc_auto_v1.Controllers
 {
+<<<<<<< HEAD
     [Authorize(Roles = "utilisateur,admin")]
     
+=======
+<<<<<<< HEAD
+=======
+    [Authorize(Roles = "utilisateur,admin")]
+    
+>>>>>>> d97746bf60d8483445cdc403eb6f751c9e5b4b84
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
     public class DemandesController : Controller
     {
         private readonly IDemandesService _demandesService;
@@ -18,6 +35,7 @@ namespace parc_auto_v1.Controllers
             _demandesService = demandesService;
         }
 
+<<<<<<< HEAD
         /* public async Task<IActionResult> Index()
           {
               var demandes = await _demandesService.GetAllDemandesAsync();
@@ -41,6 +59,14 @@ namespace parc_auto_v1.Controllers
 
 
 
+=======
+        public async Task<IActionResult> Index()
+        {
+            var demandes = await _demandesService.GetAllDemandesAsync();
+            return View(demandes);
+        }
+
+>>>>>>> 2078fab796a7e7e564eda3af7f783cc9f51e6122
         public async Task<IActionResult> Details(int id)
         {
             var demande = await _demandesService.GetDemandeByIdAsync(id);
