@@ -1,0 +1,86 @@
+﻿@model IEnumerable<parc_auto_v1.Models.Demandes>
+
+@{
+    ViewData["Title"] = "Your Demands";
+}
+
+<h1>vos demandes</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Créer une nouvelle demande</a>
+</p>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Détails de la voiture</th>
+            <th>Trip Details</th>
+            <th>Détails du voyage</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <!-- Employee Information -->
+                <td>
+                    <strong>Nom Prenom:</strong> @item.Nom @item.Prenom <br />
+                    <strong>ID:</strong> @item.IdEmploye <br />
+                    <strong>Departement:</strong> @item.AffectationDepartement
+                </td>
+
+                <!-- Car Details -->
+                <td>
+                    <strong>Type:</strong> @item.TypeVoiture <br />
+                    <strong>Matricule:</strong>
+                    @if (item.Voiture != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Voiture.Matricule)
+                    }
+                    else
+                    {
+                        @if (item.Etat == "Refused" )
+                        {
+                            <span class="badge bg-danger">Refuse</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">en attente</span>
+                        }
+                       
+                    }
+                </td>
+
+                <!-- Trip Details -->
+                <td>
+                    <strong>Destination:</strong> @item.Destination <br />
+                    <strong>Mission:</strong> @item.Mission <br />
+                    <strong>Dates:</strong> @item.DateDepart.ToShortDateString() - @item.DateArrivee.ToShortDateString()
+                </td>
+
+                <!-- Status -->
+                <td>
+                    @if (item.Etat == "Accepted")
+                    {
+                        <span class="badge bg-success">Accepte</span>
+                    }
+                    else if (item.Etat == "Refused")
+                    {
+                        <span class="badge bg-danger">Refuse</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning text-dark">en attente</span>
+                    }
+                </td>
+
+                <!-- Actions -->
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

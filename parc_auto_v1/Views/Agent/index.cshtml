@@ -1,0 +1,36 @@
+﻿@model IEnumerable<parc_auto_v1.Models.Demandes>
+
+@{
+    ViewData["Title"] = "Demande List";
+}
+
+<h2>Demande List</h2>
+
+<form asp-action="UpdateDemande" method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Kilométrage</th>
+                <th>Voiture Matricule</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var demande in Model)
+            {
+                <tr>
+                    <td>@demande.Nom @demande.Prenom</td>
+                    <td>
+                        <input type="number" name="kilometrage" value="@demande.Kilometrage" class="form-control" />
+                    </td>
+                    <td>@demande.Voiture?.Matricule</td>
+                    <td>
+                        <input type="hidden" name="id" value="@demande.Id" />
+                        <button type="submit" class="btn btn-primary">Update Kilométrage and Make Available</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

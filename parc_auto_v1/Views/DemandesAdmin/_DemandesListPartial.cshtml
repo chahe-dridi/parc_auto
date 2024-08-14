@@ -1,0 +1,84 @@
+﻿@model IEnumerable<parc_auto_v1.Models.Demandes>
+
+ 
+<p>@(Model?.Count() ?? 0) : Demande</p>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered table-hover table-custom">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nom & Prenom</th>
+               
+                <th>Id Employe</th>
+                <th>Affectation Departement</th>
+                <th>Type Voiture</th>
+                <th>Destination</th>
+                <th>Date Depart/Arrivee</th>
+   
+                <th>Description</th>
+                <th>Mission</th>
+                <th>KM</th>
+                <th>Etat</th>
+             
+                <th>Matricule</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var demande in Model)
+            {
+                <tr>
+
+                    <td>@demande.Prenom @demande.Nom</td>
+ 
+                    <td>@demande.IdEmploye</td>
+                    <td>@demande.AffectationDepartement</td>
+                    <td>@demande.TypeVoiture</td>
+                    <td>@demande.Destination</td>
+                    <td>@demande.DateDepart.ToShortDateString() ?? "N/A" @demande.DateArrivee.ToShortDateString() ?? "N/A"</td>
+               
+                    <td>@demande.Description</td>
+                    <td>@demande.Mission</td>
+                    <td>@demande.Kilometrage</td>
+                    <td>
+                        @if (demande.Etat == "Accepted")
+                        {
+                            <span class="badge badge-success">Accepted</span>
+                        }
+                        else if (demande.Etat == "Refused")
+                        {
+                            <span class="badge badge-danger">Refused</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-warning">Pending</span>
+                        }
+                    </td>
+                  
+                    <td>
+                        @if (demande.Etat == "Refused")
+                        {
+                            <span class="text-danger">Refused</span>
+                        }
+                        else if (demande.Voiture != null)
+                        {
+                            @demande.Voiture.Matricule
+                        }
+                        else
+                        {
+                            <span class="text-muted">Not Assigned</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@demande.Id" class="btn btn-primary btn-sm btn-custom">View</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No data available.</p>
+}

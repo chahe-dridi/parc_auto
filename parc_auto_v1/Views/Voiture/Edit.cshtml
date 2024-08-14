@@ -1,0 +1,155 @@
+﻿@model parc_auto_v1.Models.Voiture
+
+@{
+    ViewData["Title"] = "Edit Voiture";
+}
+
+<h1>Edit Voiture</h1>
+
+<h4>Voiture</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Matricule" class="control-label"></label>
+                <input asp-for="Matricule" class="form-control" />
+                <span asp-validation-for="Matricule" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TypeVoiture" class="control-label"></label>
+                <select asp-for="TypeVoiture" class="form-control">
+                    <option value="4 places" selected="@(Model.TypeVoiture == "4 places" ? "selected" : "")">4 places</option>
+                    <option value="utilities" selected="@(Model.TypeVoiture == "utilities" ? "selected" : "")">Utilities</option>
+                </select>
+                <span asp-validation-for="TypeVoiture" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MarqueId" class="control-label"></label>
+                <select asp-for="MarqueId" class="form-control" id="marque-select">
+                    <option value="">-- Select Marque --</option>
+                    @foreach (var marque in ViewBag.Marques)
+                    {
+                        <option value="@marque.Id" selected="@(marque.Id == Model.MarqueId ? "selected" : "")">@marque.Nom</option>
+                    }
+                </select>
+                <button type="button" class="btn btn-primary" id="addMarque">Add Marque</button>
+                <span asp-validation-for="MarqueId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ModeleId" class="control-label"></label>
+                <select asp-for="ModeleId" class="form-control" id="modele-select">
+                    <option value="">-- Select Modele --</option>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+                <button type="button" class="btn btn-primary" id="addModele">Add Modele</button>
+                <span asp-validation-for="ModeleId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Km" class="control-label"></label>
+                <input asp-for="Km" class="form-control" />
+                <span asp-validation-for="Km" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Carburant" class="control-label"></label>
+                <select asp-for="Carburant" class="form-control">
+                    <option value="Essence" selected="@(Model.Carburant == "Essence" ? "selected" : "")">Essence</option>
+                    <option value="Gazol" selected="@(Model.Carburant == "Gazol" ? "selected" : "")">Gazol</option>
+                </select>
+                <span asp-validation-for="Carburant" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Etat" class="control-label"></label>
+                <input asp-for="Etat" class="form-control" />
+                <span asp-validation-for="Etat" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Disponibilite" class="control-label"></label>
+                <select asp-for="Disponibilite" class="form-control">
+                    <option value="Pre Reserved" selected="@(Model.Disponibilite == "Pre Reserved" ? "selected" : "")">Pre Reserved</option>
+                    <option value="Reserved" selected="@(Model.Disponibilite == "Reserved" ? "selected" : "")">Reserved</option>
+                    <option value="Disponible" selected="@(Model.Disponibilite == "Disponible" ? "selected" : "")">Disponible</option>
+                    <option value="En Arrivage" selected="@(Model.Disponibilite == "En Arrivage" ? "selected" : "")">En Arrivage</option>
+                </select>
+                <span asp-validation-for="Disponibilite" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Populate Modele dropdown based on Marque selection
+            $('#marque-select').change(function () {
+                var marqueId = $(this).val();
+                if (marqueId) {
+                    $.getJSON('@Url.Action("GetModelesByMarqueId", "Voiture")', { marqueId: marqueId }, function (data) {
+                        var $modeleSelect = $('#modele-select');
+                        $modeleSelect.empty();
+                        $modeleSelect.append('<option value="">-- Select Modele --</option>');
+                        $.each(data, function (i, modele) {
+                            $modeleSelect.append('<option value="' + modele.id + '">' + modele.nom + '</option>');
+                        });
+
+                        // Set selected Modele
+                        var selectedModeleId = '@Model.ModeleId';
+                        if (selectedModeleId) {
+                            $modeleSelect.val(selectedModeleId);
+                        }
+                    });
+                } else {
+                    $('#modele-select').empty().append('<option value="">-- Select Modele --</option>');
+                }
+            });
+
+            // Trigger change event on page load to populate Modele options based on existing Marque
+            $('#marque-select').trigger('change');
+
+            // Add new Marque
+            $('#addMarque').click(function () {
+                var newMarque = prompt("Enter new Marque:");
+                if (newMarque) {
+                    $.post('@Url.Action("AddMarque", "Voiture")', { newMarque: newMarque }, function () {
+                        location.reload();
+                    }).fail(function () {
+                        alert("Failed to add Marque.");
+                    });
+                }
+            });
+
+            // Add new Modele
+            $('#addModele').click(function () {
+                var newModele = prompt("Enter new Modele:");
+                var marqueId = $('#marque-select').val();
+                if (newModele && marqueId) {
+                    $.post('@Url.Action("AddModele", "Voiture")', { newModele: newModele, marqueId: marqueId }, function () {
+                        location.reload();
+                    }).fail(function () {
+                        alert("Failed to add Modele.");
+                    });
+                } else {
+                    alert("Please select a Marque.");
+                }
+            });
+        });
+    </script>
+}
